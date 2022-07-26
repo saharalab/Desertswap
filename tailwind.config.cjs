@@ -9,7 +9,7 @@ module.exports = {
       },
       colors: {
         floralWhite: '#FEFAEB',
-        supernova: '#FFCC00',
+        supernova: '#FCE51C',
         paleGrey: '#FDFDFD',
         earlyDawn: '#FFF9E0',
         lightEarlyDawn: '#FFF7D4',
@@ -17,8 +17,9 @@ module.exports = {
         moonsoon: '#898989',
         lightGray: "#373739",
         "black/900": "#1a1a1a", 
+        "black/500": "#171716",
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

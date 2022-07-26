@@ -1,8 +1,19 @@
 import "../styles/globals.css";
-import type { AppType } from "next/dist/shared/lib/utils";
+import type { ReactElement, ReactNode } from "react";
+import type { NextPage } from "next";
+import type { AppProps } from "next/app";
 
-const MyApp: AppType = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
+export type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode;
 };
 
-export default MyApp;
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  // Use the layout defined at the page level, if available
+  const getLayout = Component.getLayout || ((page: any) => page);
+
+  return getLayout(<Component {...pageProps} />);
+}
