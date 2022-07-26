@@ -1,0 +1,25 @@
+Deserswap Dapp Design Guide.. 
+--------------------------------
+Ref: Note: Kindly make design reference from 
+Q: https://legacy.dodoex.io/exchange/
+
+-> Access the icons in the Desertswap Icon folder for the Exchange section.  
+
+1. Design should follow similar color pattern as in the Exchange sections, 
+   and due to time the design is incomplete so reference should be made from 
+   the dodoex website.
+
+2. Sections to be worked on 
+   - Exchange'
+   - Earn (sub sections)
+   - Crowdpooling
+   - Tools (sub sections
+   - NFT (sub sections) 
+   - Governance
+   - Bridge
+
+Design is not complete due to time, kindly put in necessary measure to make the design whole by 
+referring to the Dodoex platform...
+
+Please if you have any  question do let me know. 
+Yeb Timotheous. 
