@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Defaults */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  /* font-family: 'montserrat', sans-serif; */
+  font-family: 'Styrene A Web', sans-serif;
+}
+
+#__next,
+body {
+  height: 100%;
+  width: 100%;
+  /* background: #fff; */
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+
+@layer components {
+
+}
+
+
+
+/* Background Gradient */
+.conic-bg-gradient-floor-pink {
+  background: conic-gradient(
+    from -50.37deg at 87.64% 114.44%,
+    #ff7061 0deg,
+    #ff9929 35.62deg,
+    #f4cc58 65.28deg,
+    #ebff00 150deg,
+    #ffd376 289.1deg,
+    #ff9900 316.82deg,
+    #ff7061 360deg
+  );
+}
+
+.conic-bg-gradient-counter {
+  background: rgb(253, 223, 0);
+  background: radial-gradient(
+    circle,
+    rgba(253, 223, 0, 1) 0%,
+    rgba(255, 255, 255, 1) 39%
+  );
+}
+
+/* Borders */
+.border-whitePaper {
+  /* Whitepaper */
+  border: 1px solid #ffcc00;
+}
+
+.border-scroll-down {
+  /* Scroll down */
+  border: 0.36px solid #000000cc;
+}
+
+.border-learn-more {
+  /* Learn more */
+  border: 1px solid #ffcc00;
+}
+
+/* Typography */
+.text-label {
+  /* Label */
+  font-family: 'Styrene A Web';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.text-secondary {
+  /* Secondary */
+  font-family: 'Styrene A Web';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.text-eye {
+  /* Eye */
+  font-family: 'Styrene A Web';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.text-header {
+  /* Header */
+  font-family: 'Styrene A Web';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 41px;
+  color: #000000;
+}
+
+/* max-button */
+.max-button {
+  height: 15px;
+  font-size: 10px;
+  color: #6c757d;
+  padding: 0rem 0.6rem;
+  border-radius: 0.25rem;
+  border: 1px solid #6c757d;
+  margin-left: 5px;
+}
+
+.max-button:hover {
+  background: #6c757d;
+  color: white;
+  cursor: pointer;
+}
+
+/* Font Family */
+@font-face {
+  font-family: 'Styrene A Web';
+  src: url('/fonts/SyreneAWeb/StyreneAWeb-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Styrene A Web';
+  src: url('/fonts/SyreneAWeb/StyreneAWeb-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Styrene A Web';
+  src: url('/fonts/SyreneAWeb/StyreneAWeb-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Styrene A Web';
+  src: url('/fonts/SyreneAWeb/StyreneAWeb-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Styrene A Web';
+  src: url('/fonts/SyreneAWeb/StyreneAWeb-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Styrene A Web';
+  src: url('/fonts/SyreneAWeb/StyreneAWeb-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Styrene A Web';
+  src: url('/fonts/SyreneAWeb/StyreneAWeb-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Styrene A Web';
+  src: url('/fonts/SyreneAWeb/StyreneAWeb-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Styrene A Web';
+  src: url('/fonts/SyreneAWeb/StyreneAWeb-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Styrene A Web';
+  src: url('/fonts/SyreneAWeb/StyreneAWeb-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Styrene-A-Web-Light';
+  src: url('/fonts/SyreneAWeb/StyreneAWeb-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Styrene A Web';
+  src: url('/fonts/SyreneAWeb/StyreneAWeb-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
