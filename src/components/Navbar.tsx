@@ -2,29 +2,31 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Logo, PopOver } from "../utils";
-import { CgMenuGridO } from "react-icons/cg"
+import { CgMenuGridO } from "react-icons/cg";
 
 export const Navbar = () => {
   return (
-    <div className="flex justify-center h-max min-w-full border-solid border-b-black/900 border-b-2">
-      <div className=" lg:container w-full flex justify-between items-center ">
-        <div className="flex min-w-max space-x-5">
+    <div className="bg-supernova flex justify-center h-max min-w-full border-solid border-b-black/900 border-b-2">
+      <div className="px-3 md:px-10 2xl:container w-full flex justify-between items-center ">
+        <div className="flex justify-between xl:justify-start w-full min-w-max space-x-5">
           <Logo />
           {/* Navigations */}
-          <LeftNavArea />
+          <Navigations />
         </div>
         {/* Wallet Connect */}
-        <RightNavArea />
+        <div className="hidden xl:flex h-full">
+          <NavConnectWallet />
+        </div>
       </div>
     </div>
   );
 };
 
-function RightNavArea() {
+export function NavConnectWallet() {
   return (
-    <div className="flex items-center h-full">
-      <div className="flex items-center space-x-3 ">
-        <button className="flex items-center">
+    <div className="fixed border-solid border-t-2 border-t-black/900 xl:border-none bg-supernova justify-between py-2 px-2 md:px-8 xl:pl-16 xl:pr-2 xl:py-0 bottom-0 w-full xl:w-auto xl:relative flex items-center xl:h-full">
+      <div className="scale-75 flex items-center space-x-3 ">
+        <button className="flex items-center min-w-max">
           <Image
             src="/assets/icons/dswap_home_icon.png"
             className=" object-contain"
@@ -33,7 +35,7 @@ function RightNavArea() {
             alt="dswap_home_icon"
           />
         </button>
-        <button className="flex items-center">
+        <button className="flex items-center min-w-max">
           <Image
             src="/assets/icons/dswap_account.png"
             className="object-contain"
@@ -43,16 +45,16 @@ function RightNavArea() {
           />
         </button>
       </div>
-      <div className=" space-x-2 flex items-center ml-7 mr-4 bg-black/500  rounded-full">
+      <div className=" space-x-2 flex items-center  md:ml-7  md:mr-4 bg-black/500  rounded-full">
         {/* Bright Dot Icon */}
         <div className="ml-4 my-2 rounded-full bg-white/40 h-2 w-2 flex justify-center items-center">
           <div className="rounded-full bg-white/90 h-1 w-1"></div>
         </div>
         {/* Network Name */}
-        <div className="translate-x-1 text-xs items-center space-x-2 flex min-w-max text-white transform -translate-y-[2px]">
+        <div className="translate-x-1 text-[0.5rem] md:text-xs items-center space-x-2 flex min-w-max text-white transform -translate-y-[2px]">
           <div className="font-bold translate-y-[1px] -translate-x-1">POP</div>
           <button className="group translate-y-[2px] px-5 pb-2 pt-2 rounded-full border-solid border border-white bg-black/500 hover:bg-black/900">
-            <div className="font-black tracking-wide transform -translate-y-[1px] w-full h-full text-darkSupernova">
+            <div className=" font-semibold md:font-black tracking-wide transform -translate-y-[1px] w-full h-full text-darkSupernova">
               Connect to a wallet
             </div>
           </button>
@@ -65,9 +67,9 @@ function RightNavArea() {
   );
 }
 
-function LeftNavArea() {
+function Navigations() {
   return (
-    <div className="flex space-x-5 relative items-center text-base">
+    <div className="hidden lg:flex flex-col md:flex-row space-x-5 relative items-center text-base">
       <NavLink key={0} Text="Exchange" href="/exchange" />
       <PopOver
         key={7}
@@ -169,4 +171,3 @@ export type PopOverItemType = {
   href: string;
   icon: React.FC;
 };
-

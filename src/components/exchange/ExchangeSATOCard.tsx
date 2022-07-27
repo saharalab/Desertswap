@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function ExchangeSATOCard() {
   return (
-    <div className="container scale-50 lg:scale-75 xl:scale-90 mt-10 h-max bg-black/900 p-8 min-w-max w-full mx-10 rounded-2xl flex flex-col shadow-[0px_0px_40px_8px_#854d0e]">
+    <div className="container scale-75 xl:scale-95 xl:mt-20 h-max bg-black/900 p-8 max-w-[400px] min-w-[400px] md:mx-10 rounded-2xl flex flex-col md:shadow-[0px_0px_40px_8px_#854d0e]">
       <div className="self-end flex ">
         <PriceQuoteAutoRefreshes />
         <InviteYourFriends />
@@ -15,11 +15,11 @@ export function ExchangeSATOCard() {
 
 function PayAndReceiveForm() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-6">
       <PayAble />
       <Receiver />
-      <button className="bg-yellow-300 py-5 w-full rounded-xl">
-        <span className="text-black/900 font-bold text-xl">Connect Wallet</span>
+      <button className="bg-yellow-300 py-4 w-full rounded-xl">
+        <span className="text-black/900 font-bold ">Connect Wallet</span>
       </button>
     </div>
   );
@@ -28,7 +28,7 @@ function PayAndReceiveForm() {
 function PayAble() {
   return (
     <div>
-      <div className="text-floralWhite font-bold text-xl">Pay</div>
+      <div className="text-floralWhite font-bold ">Pay</div>
       <div className="flex justify-between items-center my-2 bg-lightGray p-3 rounded-xl border-solid border-[1px] border-supernova">
         <button className="flex justify-center items-center min-w-max mr-3">
           <Image
@@ -38,7 +38,7 @@ function PayAble() {
             className=" object-contain"
             alt="Sahara Token"
           />
-          <span className="text-xl font-bold text-floralWhite">SATO</span>
+          <span className="text-base font-bold text-floralWhite">SATO</span>
         </button>
         <input
           type="text"
@@ -53,7 +53,7 @@ function PayAble() {
 function Receiver() {
   return (
     <div>
-      <div className="text-floralWhite font-bold text-xl">
+      <div className="text-floralWhite font-bold ">
         Receive{" "}
         <span className="font-sans font-normal">
           (<span className="font-StyreneAWeb">Estimated</span>)
@@ -68,7 +68,7 @@ function Receiver() {
             className=" object-contain"
             alt="Sahara Token"
           />
-          <span className="text-xl font-bold text-floralWhite">BNB</span>
+          <span className="font-bold text-floralWhite">BNB</span>
         </button>
         <input
           type="text"
