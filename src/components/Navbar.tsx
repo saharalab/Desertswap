@@ -24,7 +24,8 @@ export const Navbar = () => {
 
 export function NavConnectWallet() {
   return (
-    <div className="fixed border-solid border-t-2 border-t-black/900 xl:border-none bg-supernova justify-between py-2 px-2 md:px-8 xl:pl-16 xl:pr-2 xl:py-0 bottom-0 w-full xl:w-auto xl:relative flex items-center xl:h-full">
+    <div className="fixed xl:relative bottom-0 right-0">
+      <div className="justify-between py-2 px-2 md:px-8 xl:pl-16 xl:pr-2 xl:py-0 bottom-0 right-2 xl:w-auto flex items-center xl:h-full">
       <div className="scale-75 flex items-center space-x-3 ">
         <button className="flex items-center min-w-max">
           <Image
@@ -45,7 +46,7 @@ export function NavConnectWallet() {
           />
         </button>
       </div>
-      <div className=" space-x-2 flex items-center  md:ml-7  md:mr-4 bg-black/500  rounded-full">
+      <div className=" space-x-2 flex items-center  md:ml-7  mr-4 bg-black/500  rounded-full">
         {/* Bright Dot Icon */}
         <div className="ml-4 my-2 rounded-full bg-white/40 h-2 w-2 flex justify-center items-center">
           <div className="rounded-full bg-white/90 h-1 w-1"></div>
@@ -63,6 +64,7 @@ export function NavConnectWallet() {
       <div className="min-w-max min-h-max">
         <CgMenuGridO className="text-black text-2xl object-contain" />
       </div>
+    </div>
     </div>
   );
 }

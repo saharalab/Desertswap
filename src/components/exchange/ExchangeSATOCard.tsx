@@ -2,13 +2,16 @@ import Image from "next/image";
 
 export function ExchangeSATOCard() {
   return (
-    <div className="container scale-75 xl:scale-95 xl:mt-20 h-max bg-black/900 p-8 max-w-[400px] min-w-[400px] md:mx-10 rounded-2xl flex flex-col md:shadow-[0px_0px_40px_8px_#854d0e]">
-      <div className="self-end flex ">
-        <PriceQuoteAutoRefreshes />
-        <InviteYourFriends />
-        <TradeSetting />
+    // <div className="scale-75 lg:scale-100 xl:scale-95">
+    <div className="w-full flex justify-center scale-75 lg:scale-100 xl:scale-95">
+      <div className=" mx-auto  lg:my-10 xl:my-0  xl:mt-20 h-max bg-black/900 p-8 w-max max-w-[400px] sm:min-w-[400px] min-w-[350px] md:mx-10 rounded-2xl flex flex-col md:shadow-[0px_0px_40px_8px_#854d0e]">
+        <div className="self-end flex ">
+          <PriceQuoteAutoRefreshes />
+          <InviteYourFriends />
+          <TradeSetting />
+        </div>
+        <PayAndReceiveForm />
       </div>
-      <PayAndReceiveForm />
     </div>
   );
 }
@@ -42,7 +45,7 @@ function PayAble() {
         </button>
         <input
           type="text"
-          className="text-xl w-44 mr-2 text-right bg-transparent outline-none font-medium text-white placeholder:text-2xl placeholder:text-white"
+          className="text-xl w-32 sm:w-44 mr-2 text-right bg-transparent outline-none font-medium text-white placeholder:text-2xl placeholder:text-white"
           placeholder="0"
         />
       </div>
@@ -72,7 +75,7 @@ function Receiver() {
         </button>
         <input
           type="text"
-          className="text-xl w-44 mr-2 text-right bg-transparent outline-none font-medium text-white placeholder:text-2xl placeholder:text-white"
+          className="text-xl w-32 sm:w-44 mr-2 text-right bg-transparent outline-none font-medium text-white placeholder:text-2xl placeholder:text-white"
           placeholder="0"
         />
       </div>

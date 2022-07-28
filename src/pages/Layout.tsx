@@ -8,10 +8,10 @@ export default function Layout({ children }: PropsWithChildren) {
         <div className="!z-50 h-max absolute top-0 left-0 right-0 !w-full">
           <Navbar />
         </div>
-        <div className="pb-14 xl:pb-0 !z-0 2xl:container w-full xl:h-full h-max flex-grow">
+        <div className="pb-14 xl:pb-0 !z-0 2xl:container w-full xl:h-full h-max flex-grow bg-supernova">
           {children}
         </div>
-        <div className="xl:hidden w-full">
+        <div className="xl:hidden w-full ">
           <NavConnectWallet />
         </div>
       </main>
