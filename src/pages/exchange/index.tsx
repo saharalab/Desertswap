@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { ExchangeSATOCard, PriceGraph } from "../../components";
+import { ExchangeSATOCard, PriceGraphByCurrency } from "../../components";
 import Layout from "../Layout";
 
 export default function Page() {
@@ -12,7 +12,7 @@ export default function Page() {
       <div className=" h-max xl:h-full w-full flex flex-col-reverse lg:flex-row pt-10 items-center xl:flex-nowrap flex-wrap-reverse justify-center">
         <div className=" h-full w-full xl:w-4/6 xl:border-solid xl:border-r-2 xl:border-r-black/900">
           <div className=" flex h-full w-full px-2 md:px-10  text-black/900 justify-center  ">
-            <PriceGraph />
+            <PriceGraphByCurrency />
           </div>
         </div>
         <div className=" mt-10 xl:mt-0 xl:w-auto w-full h-full flex md:items-center xl:items-start md:justify-center ">

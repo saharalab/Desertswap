@@ -1,2 +1,2 @@
 export * from "./ExchangeSATOCard"
-export * from "./PriceGraph"
+export * from "./PriceGraphByCurrency"

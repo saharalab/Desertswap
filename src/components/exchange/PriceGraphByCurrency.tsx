@@ -2,9 +2,9 @@ import Image from "next/image";
 import React from "react";
 import { PlotGraph } from "../../utils";
 
-export function PriceGraph() {
+export function PriceGraphByCurrency() {
   return (
-    <div className="container w-full h-max xl:py-14 pt-20 pb-10 2xl:px-5 xl:px-14 space-y-20">
+    <div className="container w-full h-max xl:py-14 pt-20 pb-10 2xl:px-5 xl:px-14 space-y-5 mt-10">
       <div className="h-max w-full flex flex-col md:flex-row justify-between items-end">
         <div className="space-y-2 w-full min-w-max scale-90 lg:scale-100">
           <CurrencyInfo />
@@ -26,26 +26,26 @@ export function PriceGraph() {
 
 function CurrencyInfo() {
   return (
-    <div className="flex space-x-2 ">
+    <div className="flex space-x-2 items-center">
       <div className="min-w-min">
         <Image
           className="object-contain min-w-max bg-black rounded-full"
-          src="/assets/icons/binance-logo.png"
-          height={30}
-          width={30}
+          src="/assets/icons/dswap_account.png"
+          height={20}
+          width={20}
           alt="Binance Logo"
         />
         <Image
           className="object-contain bg-black rounded-full min-w-max"
-          src="/assets/icons/binance-logo.png"
-          height={30}
-          width={30}
+          src="/assets/icons/dswap_account.png"
+          height={20}
+          width={20}
           alt="Binance Logo"
         />
       </div>
-      <div className="text-black/900 font-black text-lg sm:text-xl">
+      <div className="text-black font-black text-base md:text-lg">
         SATO{" "}
-        <span className="text-black/500/70">
+        <span className="text-lightGray">
           <span className="font-sans font-normal">/ </span> BSD
         </span>
       </div>
@@ -56,10 +56,10 @@ function CurrencyInfo() {
 function PricingInfo() {
   return (
     <div className="space-y-1 w-full text-left">
-      <div className="font-black text-2xl sm:text-4xl text-lightGray text-left">
+      <div className="font-black text-2xl sm:text-3xl text-black/900 text-left">
         100.59 BUSD
       </div>
-      <div className="font-black/900 font-bold text-xs">
+      <div className="text-black text-xs md:text-base">
         <span className="text-green-600 font-normal font-sans">
           +4.909864 BUSD (+4.21%){" "}
         </span>{" "}
@@ -72,7 +72,7 @@ function PricingInfo() {
 function ViewChartBy() {
   return (
     <div className="flex space-x-10 font-black text-lightGray mr-10 justify-between w-full ">
-      <button className="border-solid border-2 border-black/900 rounded-full px-2">
+      <button className="text-black/900 border-solid border-2 border-lightGray rounded-full px-2">
         24H
       </button>
       <button>1W</button>
