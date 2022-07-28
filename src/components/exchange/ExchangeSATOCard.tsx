@@ -1,9 +1,10 @@
 import Image from "next/image";
+import { ToolTipProvider } from "./Context";
 
 export function ExchangeSATOCard() {
   return (
-    // <div className="scale-75 lg:scale-100 xl:scale-95">
-    <div className="w-full flex justify-center scale-75 lg:scale-100 xl:scale-95">
+    // {/* <div className="scale-75 lg:scale-100 xl:scale-95"> */}
+    <div className="w-full flex justify-center scale-75 lg:scale-100 xl:scale-95 xl:justify-start">
       <div className=" mx-auto  lg:my-10 xl:my-0  xl:mt-20 h-max bg-black/900 p-8 w-max max-w-[400px] sm:min-w-[400px] min-w-[350px] md:mx-10 rounded-2xl flex flex-col md:shadow-[0px_0px_40px_8px_#854d0e]">
         <div className="self-end flex ">
           <PriceQuoteAutoRefreshes />

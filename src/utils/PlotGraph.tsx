@@ -1,130 +1,128 @@
-import { useState } from "react";
-import { Line } from "react-chartjs-2";
 import {
-  Chart as ChartJS,
-  Title,
+  PureComponent,
+  ReactNode,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+} from "react";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
   Tooltip,
-  LineElement,
   Legend,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  Filler,
-} from "chart.js";
+  ResponsiveContainer,
+  Area,
+  AreaChart,
+} from "recharts";
+import { ToolTipContext } from "../components/exchange/Context";
 
-ChartJS.register(
-  Title,
-  Tooltip,
-  LineElement,
-  Legend,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  Filler
-);
+const CustomToolTip = ({ active, payload, label }: any) => {
+  const { toolTip, setToolTip }: any = useContext<any>(ToolTipContext);
+  useEffect(() => {
+    // setToolTip({payload, label, active})
+    // if ()
+  });
 
-let width: any, height: any, gradient: any;
-function getGradient(ctx: any, chartArea: any) {
-  const chartWidth = chartArea.right - chartArea.left;
-  const chartHeight = chartArea.bottom - chartArea.top;
-  if (gradient === null || width !== chartWidth || height !== chartHeight) {
-    // Create the gradient because this is either the first render
-    // or the size of the chart has changed
-    width = chartWidth;
-    height = chartHeight;
-    gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
-    gradient.addColorStop(0, "rgba(0,0,0,0)");
-    gradient.addColorStop(0.5, "rgba(0, 128, 0, .2)");
-    gradient.addColorStop(1, "rgba(0, 128, 0, 1)");
-  }
+  return (
+    <div className="p-2 text-xs bg-lightGray text-white rounded-lg">
+      <div>{payload[0]?.payload?.time}</div>
+    </div>
+  );
+};
 
-  return gradient;
-}
+type AreaCurveType =
+  | "basis"
+  | "basisClosed"
+  | "basisOpen"
+  | "linear"
+  | "linearClosed"
+  | "natural"
+  | "monotoneX"
+  | "monotoneY"
+  | "monotone"
+  | "step"
+  | "stepBefore"
+  | "stepAfter"
+  | "CurveFactory";
 
 export function PlotGraph() {
-  const [data, setData] = useState({
-    scaleLineColor: "rgba(0,0,0,0)",
-    labels: [
-      "2:00 PM",
-      "5:00 PM",
-      "8:30 PM",
-      "10:45 PM",
-      "",
-      "",
-      "10:45 PM",
-      "",
-      "",
-      "10:45 PM",
-      "",
-      "",
-    ],
-    datasets: [
-      {
-        data: [10, 20, 0, 12, 13, 0, 20, 20, 10, 42, 43, 0],
-        borderColor: "black",
-        borderWidth: 2,
-        tension: 0.2,
-        fill: true,
-        backgroundColor: function(context: any) {
-          const chart = context.chart;
-          const {ctx, chartArea} = chart;
-  
-          if (!chartArea) {
-            // This case happens on initial chart load
-            return null;
-          }
-          return getGradient(ctx, chartArea);
-        },
-      },
-    ],
-  });
-  const options = {
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-    scales: {
-      y: {
-        ticks: {
-          display: false,
-        },
-        grid: {
-          drawBorder: false,
-          display: false,
-        },
-      },
-      x: {
-        ticks: {
-          display: false,
-        },
-        grid: {
-          drawBorder: false,
-          display: false,
-        },
-      },
-    },
-    elements: {
-      point: {
-        radius: 0,
-      },
-    },
-  };
-  const dataXLabels: string[] = ["2:00 PM", "5:00 PM", "8:30 PM", "10:45 PM"];
+  const AreaCurve: AreaCurveType = "step";
+  const AreaColor: string = "#00D025";
+
   return (
-    <div className="h-full w-full">
-      <Line
-        className="max-h-64"
-        data={data}
-        typeof="line"
-        options={options}
-      ></Line>
-      <div className="flex w-full justify-between text-xs">
-        {dataXLabels.map((label: string, index: number) => (
-          <div key={index}>{label}</div>
-        ))}
+    <div className="w-full h-64">
+      <ResponsiveContainer>
+        <AreaChart
+          width={800}
+          height={300}
+          id="Area-chart"
+          data={data}
+          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+        >
+          <defs>
+            <linearGradient id="colorBUSD" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor={AreaColor} stopOpacity={0.8} />
+              <stop offset="95%" stopColor={AreaColor} stopOpacity={0} />
+            </linearGradient>
+          </defs>
+          {/* <YAxis dataKey={"BUSD"} /> */}
+          <Tooltip content={<CustomToolTip />} />
+          <Area
+            connectNulls={true}
+            type={AreaCurve}
+            dataKey="BUSD"
+            stroke={AreaColor}
+            strokeWidth={3}
+            fillOpacity={1}
+            fill="url(#colorBUSD)"
+          />
+        </AreaChart>
+      </ResponsiveContainer>
+
+      <div className="flex w-[770px] justify-between">
+        <div>2:20 PM</div>
+        <div>3:20 PM</div>
+        <div>4:20 PM</div>
+        <div>5:20 PM</div>
       </div>
     </div>
   );
 }
+
+const data = [
+  {
+    time: "BUSD A",
+    BUSD: 0,
+  },
+  {
+    time: "BUSD B",
+    BUSD: 300,
+  },
+  {
+    time: "BUSD C",
+    BUSD: 200,
+  },
+  {
+    time: "BUSD D",
+    BUSD: 480,
+  },
+  {
+    time: "BUSD E",
+    BUSD: 2890,
+  },
+  {
+    time: "BUSD F",
+    BUSD: 1890,
+  },
+  {
+    time: "BUSD D",
+    BUSD: 390,
+  },
+  {
+    time: "BUSD A",
+    BUSD: 4000,
+  },
+];

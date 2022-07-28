@@ -1,26 +1,44 @@
 import Image from "next/image";
-import React from "react";
+// import dynamic from "next/dynamic";
+// import type { PlotGraph as PlotGraphType } from "../../utils";
 import { PlotGraph } from "../../utils";
+import SafeHydration from "../../utils/SafeHydration";
+import { ToolTipProvider } from "./Context";
+// import { Suspense } from "react";
+
+// const DynamicGraph = dynamic(
+//   () => import("../../utils/index").then((module) => module.PlotGraph as any),
+//   {
+//     suspense: true,
+//   }
+// ) as typeof PlotGraphType;
 
 export function PriceGraphByCurrency() {
   return (
-    <div className="container w-full h-max xl:py-14 pt-20 pb-10 2xl:px-5 xl:px-14 space-y-5 mt-10">
-      <div className="h-max w-full flex flex-col md:flex-row justify-between items-end">
-        <div className="space-y-2 w-full min-w-max scale-90 lg:scale-100">
-          <CurrencyInfo />
-          <PricingInfo />
+    <ToolTipProvider>
+      <div className="container w-full h-max xl:py-14 pt-20 pb-10 2xl:px-5 xl:px-0 xl:pl-24 space-y-5 mt-10">
+        <div className="h-max w-full flex flex-col md:flex-row justify-between items-end">
+          <div className="space-y-2 w-full min-w-max scale-90 lg:scale-100">
+            <CurrencyInfo />
+            <PricingInfo />
+          </div>
+          <div className="hidden md:flex">
+            <ViewChartBy />
+          </div>
         </div>
-        <div className="hidden md:flex">
-          <ViewChartBy />
+        <div className="w-full justify-center flex flex-col h-full">
+          <div className="block md:hidden w-full px-5">
+            <ViewChartBy />
+          </div>
+          {/* <Suspense fallback={`Loading...`}>
+          <DynamicGraph />
+        </Suspense> */}
+          <SafeHydration>
+            <PlotGraph />
+          </SafeHydration>
         </div>
       </div>
-      <div className="w-full justify-center flex flex-col h-full">
-        <div className="block md:hidden w-full px-5">
-          <ViewChartBy />
-        </div>
-        <PlotGraph />
-      </div>
-    </div>
+    </ToolTipProvider>
   );
 }
 
@@ -71,8 +89,8 @@ function PricingInfo() {
 
 function ViewChartBy() {
   return (
-    <div className="flex space-x-10 font-black text-lightGray mr-10 justify-between w-full ">
-      <button className="text-black/900 border-solid border-2 border-lightGray rounded-full px-2">
+    <div className="flex space-x-10 font-medium text-lightGray mr-10 justify-between w-full ">
+      <button className="bg-black/900 text-floralWhite border-solid border-2 border-lightGray rounded-full px-2">
         24H
       </button>
       <button>1W</button>
