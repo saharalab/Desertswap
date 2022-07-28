@@ -6,7 +6,7 @@ import { CgMenuGridO } from "react-icons/cg";
 
 export const Navbar = () => {
   return (
-    <div className="bg-supernova flex justify-center h-max min-w-full border-solid border-b-black/900 border-b-2">
+    <div className="bg-supernova flex justify-center h-max min-w-full border-solid border-b-black/900 border-b-[1px]">
       <div className="px-3 md:px-10 2xl:container w-full flex justify-between items-center ">
         <div className="flex justify-between xl:justify-start w-full min-w-max space-x-5">
           <Logo />
@@ -54,8 +54,8 @@ export function NavConnectWallet() {
         {/* Network Name */}
         <div className="translate-x-1 text-[0.5rem] md:text-xs items-center space-x-2 flex min-w-max text-white transform -translate-y-[2px]">
           <div className="font-bold translate-y-[1px] -translate-x-1">POP</div>
-          <button className="group translate-y-[2px] px-5 pb-2 pt-2 rounded-full border-solid border border-white bg-black/500 hover:bg-black/900">
-            <div className=" font-semibold md:font-black tracking-wide transform -translate-y-[1px] w-full h-full text-darkSupernova">
+          <button className="group translate-y-[2px] px-5 pb-2 pt-2 rounded-full border-solid border-[2px] border-paleGrey bg-gray-900">
+            <div className=" font-semibold tracking-wide transform -translate-y-[1px] w-full h-full text-supernova">
               Connect to a wallet
             </div>
           </button>
@@ -71,7 +71,7 @@ export function NavConnectWallet() {
 
 function Navigations() {
   return (
-    <div className="hidden lg:flex flex-col md:flex-row space-x-5 relative items-center text-base">
+    <div className="hidden lg:flex flex-col md:flex-row space-x-5 relative items-center text-sm">
       <NavLink key={0} Text="Exchange" href="/exchange" />
       <PopOver
         key={7}

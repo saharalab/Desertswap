@@ -23,6 +23,24 @@ ChartJS.register(
   Filler
 );
 
+let width: any, height: any, gradient: any;
+function getGradient(ctx: any, chartArea: any) {
+  const chartWidth = chartArea.right - chartArea.left;
+  const chartHeight = chartArea.bottom - chartArea.top;
+  if (gradient === null || width !== chartWidth || height !== chartHeight) {
+    // Create the gradient because this is either the first render
+    // or the size of the chart has changed
+    width = chartWidth;
+    height = chartHeight;
+    gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
+    gradient.addColorStop(0, "rgba(0,0,0,0)");
+    gradient.addColorStop(0.5, "rgba(0, 128, 0, .2)");
+    gradient.addColorStop(1, "rgba(0, 128, 0, 1)");
+  }
+
+  return gradient;
+}
+
 export function PlotGraph() {
   const [data, setData] = useState({
     scaleLineColor: "rgba(0,0,0,0)",
@@ -44,8 +62,19 @@ export function PlotGraph() {
       {
         data: [10, 20, 0, 12, 13, 0, 20, 20, 10, 42, 43, 0],
         borderColor: "black",
+        borderWidth: 2,
         tension: 0.2,
         fill: true,
+        backgroundColor: function(context: any) {
+          const chart = context.chart;
+          const {ctx, chartArea} = chart;
+  
+          if (!chartArea) {
+            // This case happens on initial chart load
+            return null;
+          }
+          return getGradient(ctx, chartArea);
+        },
       },
     ],
   });

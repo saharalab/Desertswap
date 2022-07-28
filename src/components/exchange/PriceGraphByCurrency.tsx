@@ -60,7 +60,7 @@ function PricingInfo() {
         100.59 BUSD
       </div>
       <div className="text-black text-xs md:text-base">
-        <span className="text-green-600 font-normal font-sans">
+        <span className="text-[#0E551A] font-semibold font-sans">
           +4.909864 BUSD (+4.21%){" "}
         </span>{" "}
         Past 24 hours

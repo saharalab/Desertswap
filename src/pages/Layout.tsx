@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
 import { Navbar, NavConnectWallet } from "../components";
+import { SupportButton } from "../utils";
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
@@ -14,6 +15,7 @@ export default function Layout({ children }: PropsWithChildren) {
         <div className="xl:hidden w-full ">
           <NavConnectWallet />
         </div>
+        <SupportButton />
       </main>
     </>
   );

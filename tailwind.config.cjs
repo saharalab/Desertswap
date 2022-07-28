@@ -15,7 +15,7 @@ module.exports = {
         lightEarlyDawn: '#FFF7D4',
         darkSupernova: '#EBBC00',
         moonsoon: '#898989',
-        lightGray: "#373739",
+        lightGray:  "#373739",
         "black/900": "#1a1a1a", 
         "black/500": "#171716",
       },
