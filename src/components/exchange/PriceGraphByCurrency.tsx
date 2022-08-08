@@ -20,9 +20,6 @@ export function PriceGraphByCurrency() {
           <div className="block md:hidden w-full sm:px-5 mb-10">
             <ViewChartBy />
           </div>
-          {/* <Suspense fallback={`Loading...`}>
-          <DynamicGraph />
-        </Suspense> */}
           <SafeHydration>
             <PlotGraph />
           </SafeHydration>
@@ -68,7 +65,7 @@ function PricingInfo() {
         100.59 BUSD
       </div>
       <div className="text-white md:text-black text-xs md:text-base">
-        <span className=" font-semibold font-sans">
+        <span className=" font-semibold font-sans mr-1 text-supernova md:text-black">
           +4.909864 BUSD (+4.21%)
         </span>
         Past 24 hours
@@ -83,8 +80,12 @@ function ViewChartBy() {
       <button className="bg-black/900 text-floralWhite border-solid border-2 border-lightGray rounded-full px-2">
         24H
       </button>
-      <button className="hover:bg-black/900 hover:text-white px-4 rounded-full">1W</button>
-      <button className="hover:bg-black/900 hover:text-white px-4 rounded-full">1M</button>
+      <button className="hover:bg-black/900 hover:text-white px-4 rounded-full">
+        1W
+      </button>
+      <button className="hover:bg-black/900 hover:text-white px-4 rounded-full">
+        1M
+      </button>
     </div>
   );
 }

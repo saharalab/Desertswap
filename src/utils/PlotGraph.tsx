@@ -51,10 +51,10 @@ type AreaCurveType =
 export function PlotGraph() {
   const screenWidth = window.innerWidth;
   const AreaCurve: AreaCurveType = "CurveFactory";
-  const AreaColor: string = (screenWidth >= 600 ? "#373739" : "#fff");
+  const AreaColor: string = screenWidth >= 600 ? "#373739" : "#fce51c";
 
   return (
-    <div className="w-full h-full sm:h-64 [&_svg]:h-full [&_svg]:w-full ">
+    <div className="w-full h-full sm:h-72 [&_svg]:h-full [&_svg]:w-full ">
       {/* <ResponsiveContainer></ResponsiveContainer> */}
         <AreaChart
           width={800}
@@ -83,7 +83,7 @@ export function PlotGraph() {
         </AreaChart>
       {/* </ResponsiveContainer> */}
 
-      <div className="max-h-2 text-xs flex w-full justify-between [&_div]:max-w-max text-white md:text-black/900">
+      <div className="max-h-2 text-2xs flex w-full justify-between [&_div]:max-w-max text-white md:text-black/900">
         <div>2:20 PM</div>
         <div>3:20 PM</div>
         <div>4:20 PM</div>
