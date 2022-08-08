@@ -77,20 +77,19 @@ export function CrowdPoolingInfoTabs() {
     ],
   });
 
-  let [errorMessageByCategories] = useState<{
-    Favorites: string;
-    Participated: string;
-    "Created By Me": string;
-  }>({
+  let [errorMessageByCategories] = useState<any>({
     Favorites: "You don't have any favorite Crowdpooling campaigns.",
     Participated: "You haven't participated in any Crowdpooling campaigns.",
     "Created By Me": "You haven't created any Crowdpooling.",
   });
 
-  function getErrorMessageByCategory({ idx }: { idx: number }) {
-    let listOfObjectsKeys: string[] = Object.keys(categories)
-    let currentCategory: string = listOfObjectsKeys[idx];
-    let errorMessage: string = errorMessageByCategories[currentCategory];
+  function getErrorMessageByCategory({
+    idx,
+  }: {
+    idx: number;
+  }) {
+    let currentCategory: any = Object.keys(categories)[idx];
+    let errorMessage: any = errorMessageByCategories[currentCategory];
     return errorMessage;
   }
 

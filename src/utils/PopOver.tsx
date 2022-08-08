@@ -1,6 +1,6 @@
-import { PopOverItemType } from "@/components";
 import { useRouter } from "next/router";
 import { ArrowNarrowRightIcon } from "@heroicons/react/outline";
+import { PopOverItemType } from "@/components/navbar/Utility";
 
 type PopOverProps = {
   popOverItems: PopOverItemType[];
