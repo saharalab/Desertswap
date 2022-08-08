@@ -1,6 +1,6 @@
 import { PopOver } from "@/utils";
 import { NavLink } from "./NavLinks";
-import { PopOverItems } from "./Utility";
+import {  PopOverBridgeItems, PopOverEarnItems, PopOverGovernanceItems, PopOverItems, PopOverNFTItems, PopOverToolsItems } from "./Utility";
 
 export function Navigations() {
     return (
@@ -9,32 +9,32 @@ export function Navigations() {
         <PopOver
           key={7}
           popOverName={"Earn"}
-          popOverItems={PopOverItems}
+          popOverItems={PopOverEarnItems}
           popOverItemsStyle={[""]}
         />
         <NavLink key={2} Text="Crowdpooling" href="/cp/join" />
         <PopOver
           key={8}
           popOverName={"Tools"}
-          popOverItems={PopOverItems}
+          popOverItems={PopOverToolsItems}
           popOverItemsStyle={[""]}
         />
         <PopOver
           key={9}
           popOverName={"NFT"}
-          popOverItems={PopOverItems}
+          popOverItems={PopOverNFTItems}
           popOverItemsStyle={[""]}
         />
         <PopOver
           key={10}
           popOverName={"Governance"}
-          popOverItems={PopOverItems}
+          popOverItems={PopOverGovernanceItems}
           popOverItemsStyle={[""]}
         />
         <PopOver
           key={11}
           popOverName={"Bridge"}
-          popOverItems={PopOverItems}
+          popOverItems={PopOverBridgeItems}
           popOverItemsStyle={[""]}
         />
       </div>

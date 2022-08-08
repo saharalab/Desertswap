@@ -20,7 +20,12 @@ export default defineNextConfig({
       {
         source: '/',
         destination: '/exchange',
-        permanent: true,
+        permanent: false,
+      },
+      {
+        source: '/pool',
+        destination: '/pool/list',
+        permanent: false,
       },
     ]
   },

@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { ArrowNarrowRightIcon } from "@heroicons/react/outline";
 import { PopOverItemType } from "@/components/navbar/Utility";
+import Link from "next/link";
 
 type PopOverProps = {
   popOverItems: PopOverItemType[];
@@ -29,13 +30,13 @@ export function PopOver({
         </label>
         <div
           tabIndex={0}
-          className=" w-max overflow-hidden h-0 group-hover:h-max transition-all duration-1000  dropdown-content menu shadow rounded-lg transform -translate-y-2 bg-black/500"
+          className="py-2 w-max space-y-2 overflow-hidden h-0 group-hover:h-max transition-all duration-1000  dropdown-content menu shadow rounded-lg transform -translate-y-2 bg-black/500"
         >
-          {popOverItems.map((item, index): any => (
+          {popOverItems.map((item: PopOverItemType, index: number) => (
+              <Link key={index} href={item.href}>
             <div
-              key={index}
               id={item.name}
-              className="hover:bg-lightGray group justify-between w-inherit min-w-max py-2 px-2 text-floralWhite flex items-center"
+              className="cursor-pointer hover:bg-lightGray group justify-between w-inherit min-w-max py-2 px-2 text-floralWhite flex items-center"
             >
               <div className="flex">
                 <div className="relative min-w-max h-max object-contain max-h-5 mr-3">
@@ -43,7 +44,7 @@ export function PopOver({
                 </div>
                 <div className=" w-max">
                   <div className="">{item.name}</div>
-                  <div className="text-xs text-floralWhite/70">
+                  <div className="text-xs text-floralWhite/70 max-w-[22em] lg:min-w-[16em]">
                     {item.description}
                   </div>
                 </div>
@@ -54,6 +55,7 @@ export function PopOver({
                 />
               </div>
             </div>
+            </Link>
           ))}
         </div>
       </div>

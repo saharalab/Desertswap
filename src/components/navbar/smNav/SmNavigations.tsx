@@ -1,5 +1,5 @@
 import { NavLink } from "../NavLinks";
-import { PopOverItems } from "../Utility";
+import { PopOverBridgeItems, PopOverEarnItems, PopOverGovernanceItems, PopOverItems, PopOverNFTItems, PopOverToolsItems } from "../Utility";
 import { SmSubNavDisclosure } from "./SmSubNavDisclosure";
 
 export function SmNavigations() {
@@ -9,32 +9,32 @@ export function SmNavigations() {
         <SmSubNavDisclosure
           key={7}
           popOverName={"Earn"}
-          popOverItems={PopOverItems}
+          popOverItems={PopOverEarnItems}
           href="/earn"
         />
         <NavLink key={2} Text="Crowdpooling" href="/cp/join" />
         <SmSubNavDisclosure
           key={8}
           popOverName={"Tools"}
-          popOverItems={PopOverItems}
+          popOverItems={PopOverToolsItems}
           href="/tools"
         />
         <SmSubNavDisclosure
           key={9}
           popOverName={"NFT"}
-          popOverItems={PopOverItems}
+          popOverItems={PopOverNFTItems}
           href="/nft"
         />
         <SmSubNavDisclosure
           key={10}
           popOverName={"Governance"}
-          popOverItems={PopOverItems}
+          popOverItems={PopOverGovernanceItems}
           href="/governance"
         />
         <SmSubNavDisclosure
           key={11}
           popOverName={"Bridge"}
-          popOverItems={PopOverItems}
+          popOverItems={PopOverBridgeItems}
           href="/bridge"
         />
       </div>
