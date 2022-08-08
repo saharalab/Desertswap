@@ -19,6 +19,9 @@ module.exports = {
         "black/900": "#1a1a1a", 
         "black/500": "#171716",
       },
+      backgroundImage: {
+        "liquidity-banner": "url('/assets/icons/liquidity-banner.webp')"
+      }
     },
   },
   plugins: [require("daisyui")],
