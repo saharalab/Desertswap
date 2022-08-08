@@ -1,6 +1,6 @@
 import { PopOver } from "@/utils";
 import { NavLink } from "./NavLinks";
-import {  PopOverBridgeItems, PopOverEarnItems, PopOverGovernanceItems, PopOverItems, PopOverNFTItems, PopOverToolsItems } from "./Utility";
+import {  PopOverBridgeItems, PopOverEarnItems, PopOverGovernanceItems, PopOverNFTItems, PopOverToolsItems } from "./Utility";
 
 export function Navigations() {
     return (

@@ -1,5 +1,5 @@
 import { NavLink } from "../NavLinks";
-import { PopOverBridgeItems, PopOverEarnItems, PopOverGovernanceItems, PopOverItems, PopOverNFTItems, PopOverToolsItems } from "../Utility";
+import { PopOverBridgeItems, PopOverEarnItems, PopOverGovernanceItems,  PopOverNFTItems, PopOverToolsItems } from "../Utility";
 import { SmSubNavDisclosure } from "./SmSubNavDisclosure";
 
 export function SmNavigations() {
