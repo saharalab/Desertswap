@@ -20,10 +20,12 @@ export function PopOver({
       <div className="dropdown dropdown-hover transition-all  duration-1000">
         <label
           tabIndex={0}
-          className="font-medium flex items-center group-hover:text-black/900 text-black/60 py-4"
+          className="font-semibold flex items-center group-hover:text-black/900 text-lightGray/70 py-4"
         >
           {popOverName}
-          <DownArrowIcon />
+          <span className="scale-90">
+            <DownArrowIcon key={2} />
+          </span>
         </label>
         <div
           tabIndex={0}

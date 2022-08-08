@@ -3,15 +3,16 @@ import { ToolTipProvider } from "./Context";
 
 export function ExchangeSATOCard() {
   return (
-    // {/* <div className="scale-75 lg:scale-100 xl:scale-95"> */}
-    <div className="w-full flex justify-center scale-75 lg:scale-100 xl:scale-95 xl:justify-start">
-      <div className=" mx-auto  lg:my-10 xl:my-0  xl:mt-20 h-max bg-black/900 p-8 w-max max-w-[400px] sm:min-w-[400px] min-w-[350px] md:mx-10 rounded-2xl flex flex-col md:shadow-[0px_0px_40px_8px_#854d0e]">
-        <div className="self-end flex ">
-          <PriceQuoteAutoRefreshes />
-          <InviteYourFriends />
-          <TradeSetting />
+    <div className="w-full sm:w-96 xl:w-full h-max">
+      <div className="flex justify-center scale-85 sm:scale-75 md:scale-85 xl:scale-95 xl:justify-center xl:pt-6">
+        <div className="lg:my-10 xl:my-0  xl:mt-20 h-max bg-black/900 px-6 pt-6 pb-12 w-max max-w-[400px] shadow-lg sm:min-w-[400px] min-w-[350px] md:mx-10 lg:mx-0 rounded-2xl flex flex-col md:shad ow-[0px_0px_40px_8px_#854d0e]">
+          <div className="self-end flex mb-3">
+            <PriceQuoteAutoRefreshes />
+            <InviteYourFriends />
+            <TradeSetting />
+          </div>
+          <PayAndReceiveForm />
         </div>
-        <PayAndReceiveForm />
       </div>
     </div>
   );
@@ -19,10 +20,22 @@ export function ExchangeSATOCard() {
 
 function PayAndReceiveForm() {
   return (
-    <div className="space-y-6">
+    <div className="">
       <PayAble />
+      <div className="flex justify-center mb-2">
+        <Image
+          src="/assets/icons/ds-swap-icon.png"
+          width={30}
+          height={30}
+          className="object-contain"
+          alt="ds-swap-icon"
+        />
+      </div>
       <Receiver />
-      <button className="bg-yellow-300 py-4 w-full rounded-xl">
+      <div className="mb-3 text-sm text-center text-lightEarlyDawn/70 font-semibold">
+        1 BNB = 50.09 SATO
+      </div>
+      <button className="bg-yellow-300 py-6 w-full rounded-xl">
         <span className="text-black/900 font-bold ">Connect Wallet</span>
       </button>
     </div>
@@ -32,7 +45,7 @@ function PayAndReceiveForm() {
 function PayAble() {
   return (
     <div>
-      <div className="text-floralWhite font-bold ">Pay</div>
+      <div className="text-floralWhite  ">Pay</div>
       <div className="flex justify-between items-center my-2 bg-lightGray p-3 rounded-xl border-solid border-[1px] border-supernova">
         <button className="flex justify-center items-center min-w-max mr-3">
           <Image
@@ -46,7 +59,7 @@ function PayAble() {
         </button>
         <input
           type="text"
-          className="text-xl w-32 sm:w-44 mr-2 text-right bg-transparent outline-none font-medium text-white placeholder:text-2xl placeholder:text-white"
+          className="text-xl w-32  mr-2 text-right bg-transparent outline-none font-medium text-white placeholder:text-2xl placeholder:text-white"
           placeholder="0"
         />
       </div>
@@ -57,7 +70,7 @@ function PayAble() {
 function Receiver() {
   return (
     <div>
-      <div className="text-floralWhite font-bold ">
+      <div className="text-floralWhite  ">
         Receive{" "}
         <span className="font-sans font-normal">
           (<span className="font-StyreneAWeb">Estimated</span>)
@@ -76,7 +89,7 @@ function Receiver() {
         </button>
         <input
           type="text"
-          className="text-xl w-32 sm:w-44 mr-2 text-right bg-transparent outline-none font-medium text-white placeholder:text-2xl placeholder:text-white"
+          className="text-xl w-32 mr-2 text-right bg-transparent outline-none font-medium text-white placeholder:text-2xl placeholder:text-white"
           placeholder="0"
         />
       </div>

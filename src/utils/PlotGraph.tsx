@@ -27,8 +27,8 @@ const CustomToolTip = ({ active, payload, label }: any) => {
   });
 
   return (
-    <div className="p-2 text-xs bg-lightGray text-white rounded-lg">
-      <div>{payload[0]?.payload?.time}</div>
+    <div className="max-w-max max-h-max p-2 text-xs bg-lightGray text-white rounded-lg ">
+      <span>{payload[0]?.payload?.BUSD} BSUD</span>
     </div>
   );
 };
@@ -49,12 +49,13 @@ type AreaCurveType =
   | "CurveFactory";
 
 export function PlotGraph() {
-  const AreaCurve: AreaCurveType = "step";
-  const AreaColor: string = "#00D025";
+  const screenWidth = window.innerWidth;
+  const AreaCurve: AreaCurveType = "CurveFactory";
+  const AreaColor: string = (screenWidth >= 600 ? "#373739" : "#fff");
 
   return (
-    <div className="w-full h-64">
-      <ResponsiveContainer>
+    <div className="w-full h-full sm:h-64 [&_svg]:h-full [&_svg]:w-full ">
+      {/* <ResponsiveContainer></ResponsiveContainer> */}
         <AreaChart
           width={800}
           height={300}
@@ -62,12 +63,12 @@ export function PlotGraph() {
           data={data}
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
         >
-          <defs>
+          {/* <defs>
             <linearGradient id="colorBUSD" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor={AreaColor} stopOpacity={0.8} />
               <stop offset="95%" stopColor={AreaColor} stopOpacity={0} />
             </linearGradient>
-          </defs>
+          </defs> */}
           {/* <YAxis dataKey={"BUSD"} /> */}
           <Tooltip content={<CustomToolTip />} />
           <Area
@@ -75,14 +76,14 @@ export function PlotGraph() {
             type={AreaCurve}
             dataKey="BUSD"
             stroke={AreaColor}
-            strokeWidth={3}
+            strokeWidth={4}
             fillOpacity={1}
             fill="url(#colorBUSD)"
           />
         </AreaChart>
-      </ResponsiveContainer>
+      {/* </ResponsiveContainer> */}
 
-      <div className="flex w-[770px] justify-between">
+      <div className="max-h-2 text-xs flex w-full justify-between [&_div]:max-w-max text-white md:text-black/900">
         <div>2:20 PM</div>
         <div>3:20 PM</div>
         <div>4:20 PM</div>
@@ -93,6 +94,63 @@ export function PlotGraph() {
 }
 
 const data = [
+  {
+    time: "BUSD A",
+    BUSD: 0,
+  },
+  {
+    time: "BUSD B",
+    BUSD: 300,
+  },
+  {
+    time: "BUSD C",
+    BUSD: 200,
+  },
+  {
+    time: "BUSD D",
+    BUSD: 480,
+  },
+  
+  {
+    time: "BUSD B",
+    BUSD: 300,
+  },
+  {
+    time: "BUSD C",
+    BUSD: 200,
+  },
+  {
+    time: "BUSD D",
+    BUSD: 480,
+  },
+  {
+    time: "BUSD A",
+    BUSD: 0,
+  },
+  {
+    time: "BUSD B",
+    BUSD: 300,
+  },
+  {
+    time: "BUSD C",
+    BUSD: 200,
+  },
+  {
+    time: "BUSD D",
+    BUSD: 480,
+  },
+  {
+    time: "BUSD E",
+    BUSD: 290,
+  },
+  {
+    time: "BUSD F",
+    BUSD: 1890,
+  },
+  {
+    time: "BUSD D",
+    BUSD: 390,
+  },
   {
     time: "BUSD A",
     BUSD: 0,
@@ -122,7 +180,46 @@ const data = [
     BUSD: 390,
   },
   {
+    time: "BUSD B",
+    BUSD: 300,
+  },
+  {
+    time: "BUSD C",
+    BUSD: 200,
+  },
+  {
+    time: "BUSD D",
+    BUSD: 480,
+  },
+  {
+    time: "BUSD E",
+    BUSD: 290,
+  },
+  {
+    time: "BUSD F",
+    BUSD: 1890,
+  },
+  {
+    time: "BUSD D",
+    BUSD: 390,
+  },
+  {
     time: "BUSD A",
     BUSD: 4000,
+  },
+
+  {
+    time: "BUSD A",
+    BUSD: 4000,
+  },
+
+  {
+    time: "BUSD A",
+    BUSD: 4000,
+  },
+
+  {
+    time: "BUSD A",
+    BUSD: 0,
   },
 ];

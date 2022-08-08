@@ -11,12 +11,14 @@
   /* font-family: 'montserrat', sans-serif; */
 }
 
-html, #__next,
+html,
+#__next,
 body {
   height: 100%;
   width: 100%;
   font-family: 'Styrene A Web', sans-serif;
   overflow-x: hidden;
+  /* font-size: clamp(1rem, 0.35rem + .2vw, 2rem); */
   /* background: #fff; */
 }
 
@@ -34,31 +36,60 @@ html {
   #__next {
     @apply bg-supernova flex justify-center;
   }
+
+  .recharts-wrapper {
+    @apply  !h-full;
+  }
+
+  #Area-chart {
+    @apply  !h-full !w-full;
+  }
+
+  .main-bg-gradient {
+    background: rgb(255, 251, 235);
+    background: linear-gradient(90deg, rgba(255, 251, 235, 1) 47%, rgba(252, 229, 28, 1) 47%);
+  }
+
+  /* for chrome only */
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .paddingX_4 {
+      @apply px-4;
+    }
+  }
 }
 
+.recharts-wrapper {
+  height: unset !important;
+  width: unset !important;
+}
 
 
 /* Background Gradient */
 .conic-bg-gradient-floor-pink {
-  background: conic-gradient(
-    from -50.37deg at 87.64% 114.44%,
-    #ff7061 0deg,
-    #ff9929 35.62deg,
-    #f4cc58 65.28deg,
-    #ebff00 150deg,
-    #ffd376 289.1deg,
-    #ff9900 316.82deg,
-    #ff7061 360deg
-  );
+  background: conic-gradient(from -50.37deg at 87.64% 114.44%,
+      #ff7061 0deg,
+      #ff9929 35.62deg,
+      #f4cc58 65.28deg,
+      #ebff00 150deg,
+      #ffd376 289.1deg,
+      #ff9900 316.82deg,
+      #ff7061 360deg);
 }
 
 .conic-bg-gradient-counter {
   background: rgb(253, 223, 0);
-  background: radial-gradient(
-    circle,
-    rgba(253, 223, 0, 1) 0%,
-    rgba(255, 255, 255, 1) 39%
-  );
+  background: radial-gradient(circle,
+      rgba(253, 223, 0, 1) 0%,
+      rgba(255, 255, 255, 1) 39%);
+}
+
+
+
+/* Scale */
+.scale-85 {
+  --tw-scale-x: .85;
+  --tw-scale-y: .85;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 /* Borders */

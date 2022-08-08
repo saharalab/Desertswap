@@ -1,13 +1,11 @@
 import { createContext, PropsWithChildren, useState } from "react";
 
-export const ToolTipContext = createContext<any>(null);
+export const ToolTipContext = createContext<any>("");
 
 export function ToolTipProvider({children}: PropsWithChildren) {
-  const [toolTip, setToolTip] = useState<
-    { payload: any; active: any; label: any } | any
-  >(null);
+  const [bsudValue, setBsudValue] = useState<string>("");
   return (
-    <ToolTipContext.Provider value={{ toolTip, setToolTip }}>
+    <ToolTipContext.Provider value={{ bsudValue, setBsudValue }}>
       {children}
     </ToolTipContext.Provider>
   );
