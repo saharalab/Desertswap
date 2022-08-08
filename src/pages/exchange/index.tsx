@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { ExchangeSATOCard, PriceGraphByCurrency } from "../../components";
-import Layout from "../Layout";
+import { ExchangeSATOCard, PriceGraphByCurrency } from "@/components";
+import Layout from "./Layout";
 
 export default function Page() {
   return (

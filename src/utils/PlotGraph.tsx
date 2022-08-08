@@ -1,23 +1,6 @@
-import {
-  PureComponent,
-  ReactNode,
-  useContext,
-  useEffect,
-  useLayoutEffect,
-} from "react";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  Area,
-  AreaChart,
-} from "recharts";
-import { ToolTipContext } from "../components/exchange/Context";
+import { useContext, useEffect } from "react";
+import { Tooltip, Area, AreaChart } from "recharts";
+import { ToolTipContext } from "@/components/exchange/Context";
 
 const CustomToolTip = ({ active, payload, label }: any) => {
   const { toolTip, setToolTip }: any = useContext<any>(ToolTipContext);
@@ -56,31 +39,31 @@ export function PlotGraph() {
   return (
     <div className="w-full h-full sm:h-72 [&_svg]:h-full [&_svg]:w-full ">
       {/* <ResponsiveContainer></ResponsiveContainer> */}
-        <AreaChart
-          width={800}
-          height={300}
-          id="Area-chart"
-          data={data}
-          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-        >
-          {/* <defs>
+      <AreaChart
+        width={800}
+        height={300}
+        id="Area-chart"
+        data={data}
+        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+      >
+        {/* <defs>
             <linearGradient id="colorBUSD" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor={AreaColor} stopOpacity={0.8} />
               <stop offset="95%" stopColor={AreaColor} stopOpacity={0} />
             </linearGradient>
           </defs> */}
-          {/* <YAxis dataKey={"BUSD"} /> */}
-          <Tooltip content={<CustomToolTip />} />
-          <Area
-            connectNulls={true}
-            type={AreaCurve}
-            dataKey="BUSD"
-            stroke={AreaColor}
-            strokeWidth={4}
-            fillOpacity={1}
-            fill="url(#colorBUSD)"
-          />
-        </AreaChart>
+        {/* <YAxis dataKey={"BUSD"} /> */}
+        <Tooltip content={<CustomToolTip />} />
+        <Area
+          connectNulls={true}
+          type={AreaCurve}
+          dataKey="BUSD"
+          stroke={AreaColor}
+          strokeWidth={4}
+          fillOpacity={1}
+          fill="url(#colorBUSD)"
+        />
+      </AreaChart>
       {/* </ResponsiveContainer> */}
 
       <div className="max-h-2 text-2xs flex w-full justify-between [&_div]:max-w-max text-white md:text-black/900">
@@ -110,7 +93,7 @@ const data = [
     time: "BUSD D",
     BUSD: 480,
   },
-  
+
   {
     time: "BUSD B",
     BUSD: 300,

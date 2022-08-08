@@ -1,8 +1,13 @@
 import React from "react";
-import Layout from "../Layout";
+import { SearchByAddress } from "@/components";
+import Layout from "@/pages/Layout";
 
 export default function Page() {
-  return <div>index</div>;
+  return (
+    <div>
+      <SearchByAddress />
+    </div>
+  );
 }
 
 Page.getLayout = function getLayout(page: any) {

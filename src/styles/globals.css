@@ -13,7 +13,7 @@
 
 html,
 #__next,
-body {
+body, main {
   height: 100%;
   width: 100%;
   font-family: 'Styrene A Web', sans-serif;
@@ -34,7 +34,7 @@ html {
 
 @layer components {
   #__next {
-    @apply bg-supernova flex justify-center;
+    @apply bg-lightEarlyDawn flex justify-center;
   }
 
   .recharts-wrapper {

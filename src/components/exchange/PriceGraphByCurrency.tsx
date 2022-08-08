@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { PlotGraph } from "../../utils";
-import SafeHydration from "../../utils/SafeHydration";
+import { PlotGraph } from "@/utils";
+import SafeHydration from "@/utils/SafeHydration";
 import { ToolTipProvider } from "./Context";
 
 export function PriceGraphByCurrency() {

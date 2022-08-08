@@ -1,4 +1,4 @@
-import { PopOverItemType } from "../components";
+import { PopOverItemType } from "@/components";
 import { useRouter } from "next/router";
 import { ArrowNarrowRightIcon } from "@heroicons/react/outline";
 
@@ -29,13 +29,13 @@ export function PopOver({
         </label>
         <div
           tabIndex={0}
-          className=" w-max overflow-hidden h-0 group-hover:h-max transition-all duration-1000  dropdown-content menu p-2 shadow bg-base-100 rounded-lg transform translate-y-2 bg-black/500"
+          className=" w-max overflow-hidden h-0 group-hover:h-max transition-all duration-1000  dropdown-content menu shadow rounded-lg transform -translate-y-2 bg-black/500"
         >
           {popOverItems.map((item, index): any => (
             <div
               key={index}
               id={item.name}
-              className=" group justify-between w-inherit min-w-max py-2 px-2 text-floralWhite flex items-center"
+              className="hover:bg-lightGray group justify-between w-inherit min-w-max py-2 px-2 text-floralWhite flex items-center"
             >
               <div className="flex">
                 <div className="relative min-w-max h-max object-contain max-h-5 mr-3">
