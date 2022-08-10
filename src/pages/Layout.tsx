@@ -10,7 +10,7 @@ export default function Layout({ children }: PropsWithChildren) {
         <div className="!z-50 h-max absolute top-0 left-0 right-0 !w-full">
           <Navbar {...{bgColor: "white"}} />
         </div>
-        <div className="![scrollbar-width:none;] flex justify-center lg:pb-14 sm:!pb-0 !z-0 2xl:container w-full xl:h-full h-max flex-grow ">
+        <div className=" flex justify-center lg:pb-14 sm:!pb-0 !z-0 2xl:container w-full xl:h-full h-max flex-grow ">
           {children}
         </div>
         <div className="fixed bottom-0 right-0 xl:mr-6 sm:hidden w-full sm:relative z-50 bg-supernova/80">
