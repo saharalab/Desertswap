@@ -73,7 +73,7 @@ function MyModal({ isOpen, setIsOpen, closeModal, openModal }: any) {
                   leaveFrom="opacity-100 scale-100"
                   leaveTo="opacity-0 scale-95"
                 >
-                  <Dialog.Panel className="bg-supernova w-full max-w-md transform overflow-x-hidden fixed bottom-0 top-8 pb-10 overflow-y-visible scroll-smooth">
+                  <Dialog.Panel className="bg-supernova w-full max-w-md transform overflow-x-hidden fixed bottom-0 top-0 pb-10 overflow-y-visible scroll-smooth">
                     <div className="h-full w-full ">
                       <SmNavigations />
                     </div>

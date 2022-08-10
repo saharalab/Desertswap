@@ -1,15 +1,35 @@
+import { useWindowSize } from "@/custom-hooks";
 import { Logo } from "@/utils";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { ConnectWallet } from "./ConnectWallet";
 import { Navigations } from "./Navigations";
 import { ResponsiveMenu } from "./ResponsiveMenu";
 
-
-export const Navbar = () => {
+export const Navbar = ({
+  bgColor,
+}: {
+  bgColor: "yellow" | "white" | "none";
+}) => {
   const [isOpen, setIsOpen] = useState<Boolean>(false);
+  const router = useRouter();
+  const { width: screenWidth }: { width: number } = useWindowSize();
+  let smBgColor: string = "";
+  smBgColor =
+    screenWidth <= 600 && router.asPath === "/exchange" ? "yellow" : "none";
 
   return (
-    <div className="flex justify-center h-max min-w-full xl:ml-4">
+    <div
+      className={`${
+        bgColor === "white"
+          ? "bg-lightEarlyDawn/70"
+          : bgColor === "yellow"
+          ? "bg-supernova"
+          : ""
+      } 
+      ${smBgColor === "yellow" ? "bg-supernova" : smBgColor} 
+      flex justify-center h-max min-w-full xl:pl-4`}
+    >
       <div className=" md:px-3 2xl:container w-full flex justify-between items-center ">
         <div className="flex justify-between xl:justify-start w-full min-w-max space-x-5">
           <div className="px-3">

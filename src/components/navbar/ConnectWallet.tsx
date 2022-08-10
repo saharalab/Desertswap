@@ -3,7 +3,7 @@ import { CgMenuGridO } from "react-icons/cg";
 
 export function ConnectWallet() {
     return (
-      <div className="fixed sm:relative bottom-0 right-0 xl:mr-6">
+      <div className="sm:relative xl:mr-6">
         <div className="justify-between py-2 px-2 xl:px-8 xl:pl-16 xl:pr-2 xl:py-0 bottom-0 right-2 xl:w-auto flex items-center xl:h-full">
           <div className="scale-75 flex items-center space-x-3 ">
             <button className="flex items-center min-w-max">

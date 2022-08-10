@@ -26,7 +26,8 @@ export function SmSubNavDisclosure({ popOverItems, popOverName, href }: any) {
             </Disclosure.Button>
             <Disclosure.Panel className="pt-4 pb-2 space-y-3 text-black/60">
               {popOverItems.map((item: PopOverItemType, index: number) => (
-                <div
+                <a
+                  href={item.href}
                   key={index}
                   id={item.name}
                   className="pl-6 hover:bg-darkSupernova min-h-max group justify-between  !min-w-[100vw] py-2 flex items-center"
@@ -40,7 +41,7 @@ export function SmSubNavDisclosure({ popOverItems, popOverName, href }: any) {
                       <div className="text-xs ">{item.description}</div>
                     </div>
                   </div>
-                </div>
+                </a>
               ))}
             </Disclosure.Panel>
           </>
