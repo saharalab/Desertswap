@@ -22,7 +22,7 @@ export const Navbar = ({
     <div
       className={`${
         bgColor === "white"
-          ? "bg-lightEarlyDawn/70"
+          ? "bg-lightEarlyDawn"
           : bgColor === "yellow"
           ? "bg-supernova"
           : ""
