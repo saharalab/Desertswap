@@ -68,7 +68,7 @@ export function TradingPairsTable() {
   );
 }
 
-function TableRow({ rowWidth }: { rowWidth: number }) {
+function TableRow() {
   const pagination: any = useRef(null);
   return (
     <Disclosure>
