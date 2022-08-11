@@ -21,6 +21,7 @@ module.exports = {
       },
       backgroundImage: {
         "liquidity-banner": "url('/assets/icons/liquidity-banner.webp')",
+        "mining-banner": "url('/assets/icons/mining-banner.png')",
       },
     },
   },

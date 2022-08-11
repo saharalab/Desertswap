@@ -1,7 +1,7 @@
-import { useWindowSize } from "@/custom-hooks";
+import { useScrollTopByTag, useWindowSize } from "@/custom-hooks";
 import { Logo } from "@/utils";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ConnectWallet } from "./ConnectWallet";
 import { Navigations } from "./Navigations";
 import { ResponsiveMenu } from "./ResponsiveMenu";
@@ -17,6 +17,12 @@ export const Navbar = ({
   let smBgColor: string = "";
   smBgColor =
     screenWidth <= 600 && router.asPath === "/exchange" ? "yellow" : "none";
+  
+  // Check Scroll Top Position
+  let scrollTop: number = useScrollTopByTag("main");
+  if (scrollTop === 0) {
+    bgColor = "none";
+  }
 
   return (
     <div

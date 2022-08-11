@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { Tooltip, Area, AreaChart } from "recharts";
 import { ToolTipContext } from "@/components/exchange/Context";
+import { useWindowSize } from "@/custom-hooks";
 
 const CustomToolTip = ({ active, payload, label }: any) => {
   const { toolTip, setToolTip }: any = useContext<any>(ToolTipContext);
@@ -32,7 +33,7 @@ type AreaCurveType =
   | "CurveFactory";
 
 export function PlotGraph() {
-  const screenWidth = window.innerWidth;
+  const { width: screenWidth }: { width: number } = useWindowSize();
   const AreaCurve: AreaCurveType = "CurveFactory";
   const AreaColor: string = screenWidth >= 600 ? "#373739" : "#fce51c";
 

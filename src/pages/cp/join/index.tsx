@@ -1,5 +1,9 @@
 import React from "react";
-import { CrowdPoolingInfoTabs, InfoContent, SearchByAddress } from "@/components";
+import {
+  CrowdPoolingInfoTabs,
+  InfoContent,
+  SearchByAddress,
+} from "@/components/cp/join";
 import Layout from "@/pages/Layout";
 import Head from "next/head";
 

@@ -1,3 +1,4 @@
+import { ConnectWalletBtn } from "@/utils";
 import Image from "next/image";
 import { CgMenuGridO } from "react-icons/cg";
 
@@ -35,11 +36,7 @@ export function ConnectWallet() {
               <div className="font-bold translate-y-[1px] -translate-x-1">
                 POP
               </div>
-              <button className="group translate-y-[2px] px-5 pb-2 pt-2 rounded-lg border-solid border-[1px] border-paleGrey bg-gray-900">
-                <div className=" font-semibold tracking-wide transform -translate-y-[1px] w-full h-full text-supernova text-[1em]">
-                  Connect to a wallet
-                </div>
-              </button>
+              <ConnectWalletBtn />
             </div>
           </div>
           <div className="min-w-max min-h-max">

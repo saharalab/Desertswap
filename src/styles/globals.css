@@ -11,9 +11,15 @@
   /* font-family: 'montserrat', sans-serif; */
 }
 
+/* Design System */
+:root {
+  --p: 54, 97%, 55%;
+}
+
 html,
 #__next,
-body, main {
+body,
+main {
   height: 100%;
   width: 100%;
   font-family: 'Styrene A Web', sans-serif;
@@ -35,6 +41,10 @@ html {
 @layer components {
   #__next {
     @apply bg-lightEarlyDawn flex justify-center;
+  }
+
+  #__next > div {
+    @apply h-full w-full;
   }
 
   .recharts-wrapper {
