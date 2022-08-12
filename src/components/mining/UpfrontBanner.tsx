@@ -58,7 +58,7 @@ function ActiveEndedTabs() {
   return (
     <div className="w-full px-0 h-max relative mt-10 md:-top-14">
       <Tab.Group>
-        <Tab.List className="flex justify-between items-center px-4 md:px-24 w-full pb-4 sm:pb-0">
+        <Tab.List className="flex justify-between items-start px-4 md:px-24 w-full pb-4 sm:pb-0">
           {/* For Small to Mid Size */}
           <div className="md:hidden">
             <ListBox
@@ -103,7 +103,7 @@ function ActiveEndedTabs() {
             </div>
           </div>
         </Tab.List>
-        <Tab.Panels className="px-7 md:px-24 w-full bg-supernova h-full">
+        <Tab.Panels className="px-7 md:px-24 w-full bg-supernova h-full border-t border-black">
           {Object.values(categories).map((item, idx) => (
             <Tab.Panel
               key={idx}

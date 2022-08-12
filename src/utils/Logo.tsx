@@ -5,7 +5,7 @@ import React from "react";
 export const Logo = () => {
   return (
     <Link href="/">
-      <div className=" flex items-center my-2 scale-90 md:scale-100 ">
+      <div className="cursor-pointer flex items-center my-2 scale-90 md:scale-100 ">
         <span className="hidden lg:block ">
           <Image
             src="/assets/icons/dswap-logo.png"

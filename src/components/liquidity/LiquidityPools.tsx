@@ -2,7 +2,7 @@ import React from "react";
 
 export function LiquidityPools() {
   return (
-    <div className="flex justify-between items-center bg-supernova w-full px-4 sm:px-10 lg:px-24 py-4 md:py-7 drop-shadow-xl shaodw-black z-50">
+    <div className="border-y border-black flex justify-between items-center bg-supernova w-full px-4 sm:px-10 lg:px-24 py-4 md:py-7 drop-shadow-xl shaodw-black z-50">
       <div className="text-sm lg:text-xl text-black/900 font-bold">
         Liquidity Pools
       </div>

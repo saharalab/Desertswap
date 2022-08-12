@@ -35,8 +35,10 @@ function PayAndReceiveForm() {
       <div className="mb-3 text-sm text-center text-lightEarlyDawn/70 font-semibold">
         1 BNB = 50.09 SATO
       </div>
-      <button className="bg-yellow-300 py-6 w-full rounded-xl">
-        <span className="text-black/900 font-bold ">Connect Wallet</span>
+      <button className="bg-supernova w-full rounded-xl border-black border-2">
+        <div className="px-3 py-5 bg-gradient-to-br from-black/20 via-transparent to-black/20 rounded-lg">
+          <span className="text-black/900 font-bold ">Connect Wallet</span>
+        </div>
       </button>
     </div>
   );

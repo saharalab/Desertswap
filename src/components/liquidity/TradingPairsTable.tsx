@@ -12,15 +12,14 @@ import { IoMdAdd } from "react-icons/io";
 import { RiExternalLinkFill } from "react-icons/ri";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import { Disclosure } from "@headlessui/react";
-import { HiOutlineArrowLeft } from "react-icons/hi";
 import { MiningIcon } from "@/utils";
 
 export function TradingPairsTable() {
   return (
-    <div className=" text-black/900 text-sm py-8 [&_th]:font-normal [&_thead_tr_th:first-child]:rounded-l-lg [&_thead_tr_th:last-child]:rounded-r-lg">
-      <table className="min-w-max w-full text-left table-fixed">
+    <div className=" text-black text-sm py-8 [&_th]:font-normal">
+      <table className="min-w-max w-full text-left table-fixed shadow-xl rounded-t-lg  border-black border">
         <thead className="">
-          <tr className="rounded-lg  bg-black/900 text-white">
+          <tr className="  bg-black text-white">
             <th className="">
               <div className="p-[20px] text-inherit min-w-max">
                 Trading Pair
@@ -49,7 +48,7 @@ export function TradingPairsTable() {
             <th className="w-[140px]"></th>
           </tr>
         </thead>
-        <tbody className="cursor-pointer">
+        <tbody className="cursor-pointer bg-gradient-to-br from-white/10 via-yellow-200/10 to-white/10">
           {[...Array(10)].map((item: any, idx: number) => (
             <TableRow key={idx} />
           ))}
@@ -78,8 +77,8 @@ function TableRow() {
             as="tr"
             className={`${
               !open
-                ? "border-b border-black/900/20"
-                : "border-b border-dashed border-black/900/20 bg-white/20"
+                ? "border-b border-black"
+                : "border-b border-dashed border-black bg-white/20"
             }`}
           >
             <TableRowButton {...{ open }} />
@@ -87,7 +86,7 @@ function TableRow() {
           <Disclosure.Panel
             as="tr"
             ref={pagination}
-            className={`${open ? "border-b border-black/900/20 " : ""}`}
+            className={`${open ? "border-b border-black bg-supernova" : ""}`}
           >
             <TableRowPannel {...{ rowWidth: pagination?.current?.offsetWidth || 0 }} />
           </Disclosure.Panel>
@@ -212,14 +211,14 @@ function TableRowPannel({ rowWidth }: { rowWidth: number }) {
             </div>
           </div>
           <div className="mr-14">
-            <div className="text-sm font-sans font-light">
+            <div className="text-sm">
               Trading Fee Percentage
             </div>
             <div className="mt-1">0.002%</div>
           </div>
 
           <div className="">
-            <div className="text-sm font-sans font-light">
+            <div className="text-sm ">
               Slippage Coefficient
             </div>
             <div className="mt-1">0.0001</div>
