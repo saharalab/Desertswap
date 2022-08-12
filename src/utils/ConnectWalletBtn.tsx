@@ -13,7 +13,7 @@ export const ConnectWalletBtn = () => {
       }) => {
         return (
           <div
-            className="mr-1 sm:mr-3 scale-75 md:scale-100 text-secondary-alfa"
+            className="mr-1 sm:mr-3 text-secondary-alfa"
             {...(!mounted && {
               "aria-hidden": true,
               style: {

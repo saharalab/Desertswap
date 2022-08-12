@@ -4,7 +4,7 @@ import { SmSubNavDisclosure } from "./SmSubNavDisclosure";
 
 export function SmNavigations() {
     return (
-      <div className="pt-4 h-[34em] top-10 bottom-0 flex flex-col md:flex-row space-y-5 overflow-x-hidden relative items-start text-sm">
+      <div className="pt-10 h-[34em] top-10 bottom-0 flex flex-col md:flex-row space-y-5 overflow-x-hidden relative items-start text-sm">
         <NavLink key={0} Text="Exchange" href="/exchange" />
         <SmSubNavDisclosure
           key={7}

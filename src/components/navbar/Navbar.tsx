@@ -1,7 +1,7 @@
 import { useScrollTopByTag, useWindowSize } from "@/custom-hooks";
 import { Logo } from "@/utils";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { ConnectWallet } from "./ConnectWallet";
 import { Navigations } from "./Navigations";
 import { ResponsiveMenu } from "./ResponsiveMenu";
@@ -17,23 +17,20 @@ export const Navbar = ({
   let smBgColor: string = "";
   smBgColor =
     screenWidth <= 600 && router.asPath === "/exchange" ? "yellow" : "none";
-  
+
   // Check Scroll Top Position
   let scrollTop: number = useScrollTopByTag("main");
-  if (scrollTop === 0) {
-    bgColor = "none";
-  }
 
   return (
     <div
       className={`${
-        bgColor === "white"
+        bgColor === "white" && scrollTop !== 0
           ? "bg-lightEarlyDawn"
-          : bgColor === "yellow"
+          : bgColor === "yellow" && scrollTop !== 0
           ? "bg-supernova"
           : ""
       } 
-      ${smBgColor === "yellow" ? "bg-supernova" : smBgColor} 
+      ${smBgColor === "yellow" && scrollTop !== 0 ? "bg-supernova" : smBgColor} 
       flex justify-center h-max min-w-full xl:pl-4`}
     >
       <div className=" md:px-3 2xl:container w-full flex justify-between items-center ">

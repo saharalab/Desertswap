@@ -29,7 +29,7 @@ export function Web3ConnectorConfig({ children }: PropsWithChildren) {
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider
         theme={darkTheme({
-          accentColor: "#FF9200",
+          accentColor: "#FCE51C",
           accentColorForeground: "white",
           borderRadius: "large",
           overlayBlur: "large",
