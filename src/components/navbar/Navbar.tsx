@@ -1,34 +1,79 @@
-import { useScrollTopByTag, useWindowSize } from "@/custom-hooks";
+import {
+  useAddEventListener,
+  useScrollTopByTag,
+  useWindowSize,
+} from "@/custom-hooks";
 import { Logo } from "@/utils";
 import { useRouter } from "next/router";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { createRef, ElementRef, RefObject, useRef, useState } from "react";
 import { ConnectWallet } from "./ConnectWallet";
 import { Navigations } from "./Navigations";
 import { ResponsiveMenu } from "./ResponsiveMenu";
 
 export const Navbar = ({
-  bgColor,
+  bgColor: backgroundColor,
 }: {
   bgColor: "yellow" | "white" | "none";
 }) => {
-  const [isOpen, setIsOpen] = useState<Boolean>(false);
   const router = useRouter();
+
+  // HamBurger Open Close for Small Screen Sizes
+  const [isOpen, setIsOpen] = useState<Boolean>(false);
+
+  // Measure Screen Size
   const { width: screenWidth }: { width: number } = useWindowSize();
-  let smBgColor: string = "";
-  smBgColor =
-    screenWidth <= 600 && router.asPath === "/exchange" ? "yellow" : "none";
+
+  // Background Color
+  let [bgColor, setBgColor] = useState<string>(backgroundColor);
+  let [smBgColor, setSmBgColor] = useState<string>("");
+
+  // Background Color incase Small Size on /Exchange page ? else none
+  if (screenWidth <= 600 && router.asPath === "/exchange") {
+    bgColor !== bgColor ? setBgColor("yellow") : "";
+    smBgColor !== "yellow" ? setSmBgColor("yellow") : "";
+  } else smBgColor !== "none" ? setSmBgColor("none") : "";
 
   // Check Scroll Top Position
-  let scrollTop: number = useScrollTopByTag("main");
+  let scrollTop: number | undefined = useScrollTopByTag("main");
 
-  
+  /**
+   * Event Listener on Scroll /page
+   * To: Change Background Color
+   */
+  function eventListenerOnScroll() {
+    // if (scrollTop === 0) {
+    //   smBgColor = "none";
+    //   bgColor = "none";
+    // }
+    if (typeof window !== "undefined") {
+      let navbar: any = window?.document.querySelector("#navbar");
+      scrollTop = window?.document.querySelector("main")?.scrollTop;
+      console.dir({ navbar }, { depth: Infinity });
+      if (navbar !== null) {
+        if (scrollTop !== 0) {
+          console.dir({ scrollTop, bgColor });
+          navbar.style.backgroundColor = bgColor;
+        }
+        if (scrollTop === 0) {
+          navbar.style.backgroundColor = "transparent";
+        }
+      }
+    }
+  }
+
+  useAddEventListener({
+    tag: "main",
+    eventName: "scroll",
+    eventListener: eventListenerOnScroll,
+  });
 
   return (
     <div
+      id="navbar"
       className={`${
         bgColor === "white" && scrollTop !== 0
           ? "bg-lightEarlyDawn"
-          : bgColor === "yellow" && scrollTop !== 0
+          : bgColor === "yellow"
           ? "bg-supernova"
           : ""
       } 
