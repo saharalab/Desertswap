@@ -4,6 +4,7 @@ import { BsArrowUpRight } from "react-icons/bs";
 import { SearchByPoolAddress } from "./SearchByPoolAddress";
 import { Switch, ListBox } from "@/utils";
 import { SelectorIcon } from "@heroicons/react/outline";
+import { SmMiningCard } from "./SmMiningCard";
 
 export function UpfrontBanner() {
   return (
@@ -39,20 +40,52 @@ function classNames(...classes: any) {
 
 function ActiveEndedTabs() {
   let [categories] = useState({
-    Active: {
-      id: 1,
-      title: "Does drinking coffee make you smarter?",
-      date: "5h ago",
-      commentCount: 5,
-      shareCount: 2,
-    },
-    Ended: {
-      id: 1,
-      title: "Is tech making coffee better or worse?",
-      date: "Jan 7",
-      commentCount: 29,
-      shareCount: 16,
-    },
+    Active: [
+      {
+        id: 1,
+        title: "Does drinking coffee make you smarter?",
+        date: "5h ago",
+        commentCount: 5,
+        shareCount: 2,
+      },
+      {
+        id: 1,
+        title: "Does drinking coffee make you smarter?",
+        date: "5h ago",
+        commentCount: 5,
+        shareCount: 2,
+      },
+      {
+        id: 1,
+        title: "Does drinking coffee make you smarter?",
+        date: "5h ago",
+        commentCount: 5,
+        shareCount: 2,
+      },
+      {
+        id: 1,
+        title: "Does drinking coffee make you smarter?",
+        date: "5h ago",
+        commentCount: 5,
+        shareCount: 2,
+      },
+      {
+        id: 1,
+        title: "Does drinking coffee make you smarter?",
+        date: "5h ago",
+        commentCount: 5,
+        shareCount: 2,
+      },
+    ],
+    Ended: [
+      {
+        id: 1,
+        title: "Is tech making coffee better or worse?",
+        date: "Jan 7",
+        commentCount: 29,
+        shareCount: 16,
+      },
+    ],
   });
 
   return (
@@ -76,7 +109,7 @@ function ActiveEndedTabs() {
                 key={category}
                 className={({ selected }) =>
                   classNames(
-                    " py-2.5 text-sm font-medium leading-5",
+                    " py-2.5 text-sm font-medium leading-5 outline-none",
                     "",
                     selected
                       ? "pb-5 text-black/900 font-bold border-b-2 border-black/900"
@@ -90,7 +123,9 @@ function ActiveEndedTabs() {
           </div>
           <div className="text-black/900 flex items-center">
             <div className="space-x-1 md:space-x-3 flex items-center">
-              <div className="text-[3vw] md:text-[1rem] min-w-max font-medium">My Liquidity Only</div>
+              <div className="text-[3vw] md:text-[1rem] min-w-max font-medium">
+                My Liquidity Only
+              </div>
               <div className="form-control">
                 <Switch />
               </div>
@@ -103,13 +138,18 @@ function ActiveEndedTabs() {
             </div>
           </div>
         </Tab.List>
-        <Tab.Panels className="px-7 md:px-24 w-full bg-supernova h-full border-t border-black">
-          {Object.values(categories).map((item, idx) => (
+        <Tab.Panels className="outline-none flex flex-wrap  items-baseline px-7 md:px-24 w-full bg-supernova h-full border-t border-black">
+          {Object.values(categories).map((instance, idx) => (
             <Tab.Panel
               key={idx}
-              className={classNames("rounded-xl text-black/900 h-40", "")}
+              className={classNames(
+                "outline-none flex flex-wrap rounded-xl text-black/900 h-full w-full justify-between space-y-20",
+                ""
+              )}
             >
-              <div className="pt-10 h-full text-sm">{item.title}</div>
+              {instance.map((item, idx) => (
+                <SmMiningCard key={idx} />
+              ))}
             </Tab.Panel>
           ))}
         </Tab.Panels>
@@ -139,7 +179,7 @@ function ListBoxMiningStatusFilterButton({
   selected: { name: string };
 }) {
   return (
-    <div  className="flex items-center relative w-full cursor-default rounded-full md:rounded-lg border border-black py-2 px-3 md:pl-3 md:pr-10 text-left shadow-md sm:text-sm">
+    <div className="flex items-center relative w-full cursor-default rounded-full md:rounded-lg border border-black py-2 px-3 md:pl-3 md:pr-10 text-left shadow-md sm:text-sm">
       <span className=" truncate text-xs text-black mr-4">{selected.name}</span>
       <span className=" pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
         <SelectorIcon className="h-5 w-5 text-black/900" aria-hidden={true} />
@@ -154,7 +194,7 @@ function ListBoxMiningStatusFilterOptions({
   option: { name: string };
 }) {
   return (
-    <Tab >
+    <Tab>
       <span className=" block truncate min-w-max w-full">{option.name}</span>
     </Tab>
   );

@@ -1,24 +1,72 @@
 import { MiningIcon } from "@/utils";
-import React from "react";
+import Image from "next/image";
 import { BsCircleHalf, BsCurrencyBitcoin } from "react-icons/bs";
 import { FaEthereum } from "react-icons/fa";
 import { ImArrowUpRight2 } from "react-icons/im";
 import { IoCopyOutline } from "react-icons/io5";
 import { RiExternalLinkFill } from "react-icons/ri";
 
-export function SmPairsCards() {
+export function SmMiningCard() {
   return (
-    <div className="h-full bg-supernova text-black w-full py-4 space-y-5 pb-20  ">
-      {[...Array(20)].map((item: any, idx: number) => (
-        <SmPairsCard key={idx} />
-      ))}
+    <div className="h-max space-y-3 w-[26em] bg-white/40 px-10 py-6 rounded-2xl shadow-2xl mt-10">
+      <div className="mb-10 flex justify-between">
+        <div className="text-lg font-bold mt-2">USDT-USDC LP</div>
+        {/* CRPYTO ICON */}
+        <div className="flex relative -translate-y-12 translate-x-6">
+          {/* ETH */}
+          <div className="grid place-content-center relative z-10 bg-white shadow-2xl shadow-black max-w-max p-2 rounded-full">
+            <FaEthereum className="text-4xl text-black" />
+          </div>
+          {/* ETH */}
+          <div className="grid place-content-center relative -left-2 p-2 z-0 bg-blue-600 shadow-2xl shadow-black max-w-max rounded-full">
+            <BsCurrencyBitcoin className="text-4xl text-white -rotate-3" />
+          </div>
+        </div>
+      </div>
+      <div className="space-x-3 border-b border-black pb-4 w-full flex justify-center leading-7">
+        <div className="">
+          <div className="text-[2rem] font-normal">7.55%</div>
+          <div className="text-center text-[.6rem] font-medium mt-2">USDT APY</div>
+        </div>
+        <div className="text-[1.6rem] px-3 font-sans">/</div>
+        <div className="">
+          <div className="text-[2rem] font-normal">7.55%</div>
+          <div className="text-center text-[.6rem] font-medium mt-2">USDT APY</div>
+        </div>
+      </div>
+      <div className="flex justify-between items-center">
+        <div className="text-black/60">Reward Token</div>
+        <div className="border border-black rounded-full flex items-center">
+          <Image className="rounded-full" src="/assets/icons/Desertswap Icon Logo.png" height={20} width={20} alt="reward-token-logo" />
+        </div>
+      </div>
+      <div className="flex justify-between items-center">
+        <div className="text-black/60">Value Locked</div>
+        <div className="">$13,681,138.12</div>
+      </div>
+      <div className="flex justify-between items-center">
+        <div className="text-black/60">My Share</div>
+        <div className="">$0(0%)</div>
+      </div>
+      <div className="flex justify-between items-center">
+        <div className="text-black/60">Available Balance</div>
+        <div className="">$0</div>
+      </div>
+      <div className="flex justify-between items-center">
+        <div className="text-black/60">My Reward</div>
+        <div className="">Unknown</div>
+      </div>
+      <div className="flex w-full space-x-2">
+        <button className="bg-black/900 text-supernova w-full py-4 rounded-lg">Stake ETH</button>
+        <button className="bg-black/900 text-supernova w-full py-4 rounded-lg">Stake Bitcoin</button>
+      </div>
     </div>
   );
 }
 
-function SmPairsCard() {
+export function SmMiningCards() {
   return (
-    <div className="py-2 border border-black/900 shadow-lg rounded-2xl text-[1rem]">
+    <div className="w-96 py-2 border border-black/900 shadow-lg rounded-2xl text-[1rem]">
       <div className="py-2 px-2 flex w-full justify-between">
         <div className="flex items-center">
           {/* CRPYTO ICON */}
