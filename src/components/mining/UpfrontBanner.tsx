@@ -138,12 +138,12 @@ function ActiveEndedTabs() {
             </div>
           </div>
         </Tab.List>
-        <Tab.Panels className="outline-none flex flex-wrap  items-baseline px-7 md:px-24 w-full bg-supernova h-full border-t border-black">
+        <Tab.Panels className="outline-none flex flex-wrap  items-baseline justify-between px-7 md:px-24 w-full bg-supernova h-full border-t border-black">
           {Object.values(categories).map((instance, idx) => (
             <Tab.Panel
               key={idx}
               className={classNames(
-                "outline-none flex flex-wrap rounded-xl text-black/900 h-full w-full justify-between space-y-20",
+                "outline-none flex flex-wrap rounded-xl text-black/900 h-full w-full justify-between items-baseline space-y-20",
                 ""
               )}
             >
