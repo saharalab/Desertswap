@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import { createRef, ElementRef, RefObject, useRef, useState } from "react";
 import { ConnectWallet } from "./ConnectWallet";
 import { Navigations } from "./Navigations";
-import { ResponsiveMenu } from "./ResponsiveMenu";
+import { MdResponsiveMenu } from "./MdResponsiveMenu";
 
 export const Navbar = ({
   bgColor: backgroundColor,
@@ -48,10 +48,9 @@ export const Navbar = ({
     if (typeof window !== "undefined") {
       let navbar: any = window?.document.querySelector("#navbar");
       scrollTop = window?.document.querySelector("main")?.scrollTop;
-      console.dir({ navbar }, { depth: Infinity });
+      
       if (navbar !== null) {
         if (scrollTop !== 0) {
-          console.dir({ scrollTop, bgColor });
           navbar.style.backgroundColor = bgColor;
         }
         if (scrollTop === 0) {
@@ -91,16 +90,13 @@ export const Navbar = ({
           </div>
           {/* Responsive Menu */}
           <div className="xl:hidden h-full w-full flex justify-end items-center">
-            <ResponsiveMenu {...{ isOpen, setIsOpen }} />
+            <MdResponsiveMenu {...{ isOpen, setIsOpen }} />
           </div>
         </div>
         {/* Wallet Connect */}
         <div className="hidden sm:flex h-full">
           <ConnectWallet />
         </div>
-        {/* <div className="hidden sm:hidden h-full w-full justify-end items-center">
-          <ResponsiveMenu {...{ isOpen, setIsOpen }} />
-        </div> */}
       </div>
     </div>
   );

@@ -119,7 +119,7 @@ function SmPairsCard() {
               </div>
             </div>
             <div className="flex justify-center items-center pt-4 space-x-4 max-h-max">
-              <ImArrowUpRight2 className="object-contain h-[9vw] w-[10vw] font-bold p-1 rounded-full border border-black" />
+              <ImArrowUpRight2 className="object-contain h-[2.5rem] w-[3rem] font-bold p-1 rounded-full border border-black" />
               <button className=" max-w-[300px] w-full rounded-lg py-3 font-semibold bg-black/900 text-white">
                 Add Liquidity
               </button>

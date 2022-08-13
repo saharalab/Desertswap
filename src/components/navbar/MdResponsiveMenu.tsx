@@ -7,7 +7,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { SmNavigations } from "./smNav";
 
-export function ResponsiveMenu({ isOpen, setIsOpen }: any) {
+export function MdResponsiveMenu({ isOpen, setIsOpen }: any) {
   function closeModal() {
     setIsOpen(false);
   }
@@ -73,8 +73,8 @@ function MyModal({ isOpen, setIsOpen, closeModal, openModal }: any) {
                   leaveFrom="opacity-100 scale-100"
                   leaveTo="opacity-0 scale-95"
                 >
-                  <Dialog.Panel className="bg-supernova w-full max-w-md transform overflow-x-hidden fixed bottom-0 top-0 pb-10 overflow-y-visible scroll-smooth">
-                    <div className="h-full w-full ">
+                  <Dialog.Panel className="bg-supernova w-full transform overflow-x-hidden fixed bottom-0 top-0 pb-10 overflow-y-visible scroll-smooth">
+                    <div className="h-full w-full ml-10">
                       <SmNavigations />
                     </div>
                   </Dialog.Panel>

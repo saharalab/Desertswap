@@ -4,7 +4,7 @@ import {
   InfoContent,
   SearchByAddress,
 } from "@/components/cp/join";
-import Layout from "@/pages/Layout";
+import Layout from "@/pages/cp/join/Layout";
 import Head from "next/head";
 
 export default function Page() {
