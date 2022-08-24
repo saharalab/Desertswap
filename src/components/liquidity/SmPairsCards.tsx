@@ -1,4 +1,4 @@
-import { MiningIcon } from "@/utils";
+import { MiningIcon } from "@/components/common";
 import React from "react";
 import { BsCircleHalf, BsCurrencyBitcoin } from "react-icons/bs";
 import { FaEthereum } from "react-icons/fa";

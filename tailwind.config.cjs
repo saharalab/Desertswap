@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        "xl/2": "1372px",
+      },
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],
         StyreneAWeb: ["Styrene A Web", "sans-serif"],

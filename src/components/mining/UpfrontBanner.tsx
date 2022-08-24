@@ -2,7 +2,7 @@ import { Tab } from "@headlessui/react";
 import { useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { SearchByPoolAddress } from "./SearchByPoolAddress";
-import { Switch, ListBox } from "@/utils";
+import { Switch, ListBox } from "@/components/common";
 import { SelectorIcon } from "@heroicons/react/outline";
 import { SmMiningCard } from "./SmMiningCard";
 
@@ -91,7 +91,7 @@ function ActiveEndedTabs() {
   return (
     <div className="w-full px-0 h-max relative mt-10 md:-top-14">
       <Tab.Group>
-        <Tab.List className="flex justify-between items-start px-4 md:px-24 w-full pb-4 sm:pb-0">
+        <Tab.List className="z-50 flex justify-between items-start px-4 md:px-24 w-full pb-4 sm:pb-0">
           {/* For Small to Mid Size */}
           <div className="md:hidden">
             <ListBox
@@ -107,7 +107,7 @@ function ActiveEndedTabs() {
             {Object.keys(categories).map((category) => (
               <Tab
                 key={category}
-                className={({ selected }) =>
+                className={({ selected }: { selected: Boolean }) =>
                   classNames(
                     " py-2.5 text-sm font-medium leading-5 outline-none",
                     "",
@@ -138,7 +138,7 @@ function ActiveEndedTabs() {
             </div>
           </div>
         </Tab.List>
-        <Tab.Panels className="outline-none flex flex-wrap  items-baseline justify-between px-7 md:px-24 w-full bg-supernova h-full border-t border-black">
+        <Tab.Panels className="z-0 outline-none flex flex-wrap  items-baseline justify-between px-7 md:px-24 w-full bg-supernova h-full border-t border-black">
           {Object.values(categories).map((instance, idx) => (
             <Tab.Panel
               key={idx}

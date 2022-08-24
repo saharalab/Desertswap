@@ -7,7 +7,7 @@ export const PopOverEarnItems: PopOverItemType[] = [
     href: "/liquidity",
     icon: () => (
       <Image
-        src="/assets/icons/dswap_account.png"
+        src="/assets/icons/Liquidity.png"
         className="object-contain"
         height={32}
         width={32}
@@ -21,7 +21,7 @@ export const PopOverEarnItems: PopOverItemType[] = [
     href: "/mining",
     icon: () => (
       <Image
-        src="/assets/icons/dswap_account.png"
+        src="/assets/icons/Mining.png"
         className="object-contain"
         height={32}
         width={32}
@@ -38,7 +38,7 @@ export const PopOverToolsItems: PopOverItemType[] = [
     href: "/erc20",
     icon: () => (
       <Image
-        src="/assets/icons/dswap_account.png"
+        src="/assets/icons/Create token.png"
         className="object-contain"
         height={32}
         width={32}
@@ -52,7 +52,7 @@ export const PopOverToolsItems: PopOverItemType[] = [
     href: "/cp/list",
     icon: () => (
       <Image
-        src="/assets/icons/dswap_account.png"
+        src="/assets/icons/Create crowd pooling.png"
         className="object-contain"
         height={32}
         width={32}
@@ -69,7 +69,7 @@ export const PopOverNFTItems: PopOverItemType[] = [
     href: "##",
     icon: () => (
       <Image
-        src="/assets/icons/dswap_account.png"
+        src="/assets/icons/earn.png"
         className="object-contain"
         height={32}
         width={32}
@@ -83,7 +83,7 @@ export const PopOverNFTItems: PopOverItemType[] = [
     href: "##",
     icon: () => (
       <Image
-        src="/assets/icons/dswap_account.png"
+        src="/assets/icons/Fragments.png"
         className="object-contain"
         height={32}
         width={32}
@@ -97,7 +97,7 @@ export const PopOverNFTItems: PopOverItemType[] = [
     href: "##",
     icon: () => (
       <Image
-        src="/assets/icons/dswap_account.png"
+        src="/assets/icons/Create NFT.png"
         className="object-contain"
         height={32}
         width={32}
@@ -114,7 +114,7 @@ export const PopOverGovernanceItems: PopOverItemType[] = [
     href: "##",
     icon: () => (
       <Image
-        src="/assets/icons/dswap_account.png"
+        src="/assets/icons/DAO.png"
         className="object-contain"
         height={32}
         width={32}
@@ -128,7 +128,7 @@ export const PopOverGovernanceItems: PopOverItemType[] = [
     href: "##",
     icon: () => (
       <Image
-        src="/assets/icons/dswap_account.png"
+        src="/assets/icons/vDSWAP.png"
         className="object-contain"
         height={32}
         width={32}
@@ -142,7 +142,7 @@ export const PopOverGovernanceItems: PopOverItemType[] = [
     href: "##",
     icon: () => (
       <Image
-        src="/assets/icons/dswap_account.png"
+        src="/assets/icons/Forum.png"
         className="object-contain"
         height={32}
         width={32}
@@ -156,7 +156,7 @@ export const PopOverGovernanceItems: PopOverItemType[] = [
     href: "##",
     icon: () => (
       <Image
-        src="/assets/icons/dswap_account.png"
+        src="/assets/icons/voting.png"
         className="object-contain"
         height={32}
         width={32}

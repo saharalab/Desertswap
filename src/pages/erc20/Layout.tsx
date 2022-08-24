@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import { Navbar, Web3ConnectorConfig } from "@/components";
-import { SupportButton } from "@/utils";
+import { SupportButton } from "@/components/common";
 import { ConnectWallet } from "@/components/navbar/ConnectWallet";
 
 export default function Layout({ children }: PropsWithChildren) {

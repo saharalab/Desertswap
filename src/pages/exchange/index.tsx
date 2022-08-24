@@ -15,7 +15,7 @@ export default function Page() {
             <PriceGraphByCurrency />
           </div>
         </div>
-        <div className="lg:paddingX_4 lg:mt-0 mt-7 md:w-auto w-full h-full flex md:items-center xl:items-start md:justify-center ">
+        <div className="lg:paddingX_4 xl:mr-16 lg:mt-0 mt-7 md:w-auto w-full h-full flex md:items-center xl:items-start md:justify-center ">
           <ExchangeSATOCard />
         </div>
       </div>

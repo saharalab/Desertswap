@@ -1,4 +1,4 @@
-import { PopOver } from "@/utils";
+import { PopOver } from "@/components/common";
 import { NavLink } from "./NavLinks";
 import {  PopOverBridgeItems, PopOverEarnItems, PopOverGovernanceItems, PopOverNFTItems, PopOverToolsItems } from "./Utility";
 

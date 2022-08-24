@@ -3,7 +3,7 @@ import {
   useScrollTopByTag,
   useWindowSize,
 } from "@/custom-hooks";
-import { Logo } from "@/utils";
+import { Logo } from "@/components/common";
 import { useRouter } from "next/router";
 import { createRef, ElementRef, RefObject, useRef, useState } from "react";
 import { ConnectWallet } from "./ConnectWallet";
@@ -80,11 +80,11 @@ export const Navbar = ({
       flex justify-center h-max min-w-full xl:pl-4`}
     >
       <div className=" md:px-3 2xl:container w-full flex justify-between items-center ">
-        <div className="flex justify-between xl:justify-start w-full min-w-max space-x-5">
+        <div className="flex justify-between xl:justify-start xl/2:justify-between items-center w-full min-w-max 2xl:space-x-5 xl:w-[60%] xl/2:w-[65%] 2xl:w-[65%]">
           <div className="px-3">
             <Logo />
           </div>
-          <div className="hidden xl:flex">
+          <div className="hidden xl:flex xl:-translate-x-4">
             {/* Navigations */}
             <Navigations />
           </div>
@@ -94,7 +94,7 @@ export const Navbar = ({
           </div>
         </div>
         {/* Wallet Connect */}
-        <div className="hidden sm:flex h-full">
+        <div className="hidden sm:flex h-full relative container xl/2:w-[33%] xl:w-[40%] 2xl:w-[33%] max-w-min xl:max-w-full ml-7  xl:ml-0">
           <ConnectWallet />
         </div>
       </div>

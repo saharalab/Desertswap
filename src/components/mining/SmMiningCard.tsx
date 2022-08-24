@@ -1,10 +1,18 @@
-import { MiningIcon } from "@/utils";
+import { MiningIcon } from "@/components/common";
+import { Tab } from "@headlessui/react";
 import Image from "next/image";
-import { BsCircleHalf, BsCurrencyBitcoin } from "react-icons/bs";
+import { ReactNode, useState } from "react";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
+import {
+  BsArrowRightCircleFill,
+  BsCircleHalf,
+  BsCurrencyBitcoin,
+} from "react-icons/bs";
 import { FaEthereum } from "react-icons/fa";
 import { ImArrowUpRight2 } from "react-icons/im";
 import { IoCopyOutline } from "react-icons/io5";
 import { RiExternalLinkFill } from "react-icons/ri";
+import { MiningCardModal } from "./MiningCardModal";
 
 export function SmMiningCard() {
   return (
@@ -26,18 +34,28 @@ export function SmMiningCard() {
       <div className="space-x-3 border-b border-black pb-4 w-full flex justify-center leading-7">
         <div className="">
           <div className="text-[2rem] font-normal">7.55%</div>
-          <div className="text-center text-[.6rem] font-medium mt-2">USDT APY</div>
+          <div className="text-center text-[.6rem] font-medium mt-2">
+            USDT APY
+          </div>
         </div>
         <div className="text-[1.6rem] px-3 font-sans">/</div>
         <div className="">
           <div className="text-[2rem] font-normal">7.55%</div>
-          <div className="text-center text-[.6rem] font-medium mt-2">USDT APY</div>
+          <div className="text-center text-[.6rem] font-medium mt-2">
+            USDT APY
+          </div>
         </div>
       </div>
       <div className="flex justify-between items-center">
         <div className="text-black/60">Reward Token</div>
         <div className="border border-black rounded-full flex items-center">
-          <Image className="rounded-full" src="/assets/icons/Desertswap Icon Logo.png" height={20} width={20} alt="reward-token-logo" />
+          <Image
+            className="rounded-full"
+            src="/assets/icons/Desertswap Logo.png"
+            height={20}
+            width={20}
+            alt="reward-token-logo"
+          />
         </div>
       </div>
       <div className="flex justify-between items-center">
@@ -49,7 +67,7 @@ export function SmMiningCard() {
         <div className="">$0(0%)</div>
       </div>
       <div className="flex justify-between items-center">
-        <div className="text-black/60">Available Balance</div>
+        <div className="text-black/60 ">Available Balance</div>
         <div className="">$0</div>
       </div>
       <div className="flex justify-between items-center">
@@ -57,11 +75,15 @@ export function SmMiningCard() {
         <div className="">Unknown</div>
       </div>
       <div className="flex w-full space-x-2">
-        <button className="bg-black/900 text-supernova w-full py-4 rounded-lg">Stake ETH</button>
-        <button className="bg-black/900 text-supernova w-full py-4 rounded-lg">Stake Bitcoin</button>
+        <MiningCardModal {...{ coinDetail: { icon: FaEthereum, name: "Ethereum", subName: "ETH" } }} button={"Stake ETH"} />
+        <MiningCardModal {...{ coinDetail: { icon: BsCurrencyBitcoin, name: "Bitcoin", subName: "BTC" } }} button={"Stake Bitcoin"} />
       </div>
     </div>
   );
+}
+
+function classNames(...classes: any) {
+  return classes.filter(Boolean).join(" ");
 }
 
 export function SmMiningCards() {

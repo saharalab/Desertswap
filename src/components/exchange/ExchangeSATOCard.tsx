@@ -1,17 +1,137 @@
+import { Switch } from "./ExpertModeSwitch"
+import { RadioGroup } from "@headlessui/react";
 import Image from "next/image";
+import { useState } from "react";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
+import { FiArrowLeft } from "react-icons/fi";
 // import { ToolTipProvider } from "./Context";
 
 export function ExchangeSATOCard() {
+  const [openTradeSettingPannel, setOpenTradeSettingPannel] =
+    useState<Boolean>(false);
   return (
     <div className="w-full sm:w-96 xl:w-full h-max">
       <div className="flex justify-center scale-85 sm:scale-75 md:scale-85 xl:scale-95 xl:justify-center xl:pt-6">
-        <div className="lg:my-10 xl:my-0  xl:mt-20 h-max bg-black/900 px-6 pt-6 pb-12 w-max max-w-[400px] shadow-lg sm:min-w-[400px] min-w-[350px] md:mx-10 lg:mx-0 rounded-2xl flex flex-col ">
-          <div className="self-end flex mb-3">
-            <PriceQuoteAutoRefreshes />
-            <InviteYourFriends />
-            <TradeSetting />
+        <div className="relative lg:my-10 xl:my-0  xl:mt-20 h-max bg-black/900 px-6 pt-6 pb-12 w-max max-w-[400px] shadow-lg sm:min-w-[400px] min-w-[350px] md:mx-10 lg:mx-0 rounded-2xl flex flex-col ">
+          {openTradeSettingPannel ? (
+            <div className="left-0 rounded-2xl absolute top-0 h-full w-full">
+              <TradeSettingPannel
+                {...{ openTradeSettingPannel, setOpenTradeSettingPannel }}
+              />
+            </div>
+          ) : (
+            ""
+          )}
+          <div
+            className={`${
+              openTradeSettingPannel ? "invisible" : ""
+            } flex flex-col justify-end`}
+          >
+            <div className="self-end flex mb-3">
+              <PriceQuoteAutoRefreshes />
+              <InviteYourFriends />
+              <button onClick={() => setOpenTradeSettingPannel(true)}>
+                <TradeSetting />
+              </button>
+            </div>
+            <PayAndReceiveForm />
           </div>
-          <PayAndReceiveForm />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TradeSettingPannel({
+  openTradeSettingPannel,
+  setOpenTradeSettingPannel,
+}: {
+  openTradeSettingPannel: Boolean;
+  setOpenTradeSettingPannel: any;
+}) {
+  const [slippageTolerance] = useState<{ STPercentage: string }[]>([
+    {
+      STPercentage: "0.5%",
+    },
+    {
+      STPercentage: "1%",
+    },
+    {
+      STPercentage: "3%",
+    },
+  ]);
+  const [selected, setSelected] = useState(slippageTolerance[0]);
+
+  return (
+    <div className="px-3 py-4">
+      <div className="flex items-center">
+        <button onClick={() => setOpenTradeSettingPannel(false)}>
+          <FiArrowLeft className="text-white text-3xl" />
+        </button>
+        <div className="flex-grow text-center mr-6 text-base">
+          Trade Settings
+        </div>
+      </div>
+      <div className="px-4">
+        <div className="mt-6 text-white flex items-center space-x-2">
+          <div className="text-sm">Slippage Tolerance</div>
+          <AiOutlineQuestionCircle className="text-lg" />
+        </div>
+        <div className="">
+          <div className="flex items-center space-x-2">
+            <RadioGroup value={selected} onChange={setSelected}>
+              <RadioGroup.Label className="sr-only">
+                Slippage Tolerance
+              </RadioGroup.Label>
+              <div className="space-x-2 flex items-center py-4">
+                {slippageTolerance.map(
+                  (item: { STPercentage: string }, idx: number) => (
+                    <RadioGroup.Option
+                      key={idx}
+                      value={item}
+                      className={({ active, checked }) =>
+                        `${
+                          checked
+                            ? "bg-supernova text-black"
+                            : "bg-white/10 text-white"
+                        }
+                    max-w-min text-sm relative flex cursor-pointer rounded-xl px-6 py-2 shadow-md focus:outline-none`
+                      }
+                    >
+                      {({ active, checked }) => (
+                        <div className="flex w-full items-center justify-between">
+                          <div className="min-w-max font-bold font-sans">
+                            {item.STPercentage}
+                          </div>
+                        </div>
+                      )}
+                    </RadioGroup.Option>
+                  )
+                )}
+              </div>
+            </RadioGroup>
+            <input
+              className="outline-none border-none max-w-min min-w-[60px] max-h-min py-[.4rem] px-3 bg-white/10 shadow-md font-bold text-white rounded-xl text-base"
+              type="text"
+              id=""
+            />
+            <div className="text-white">%</div>
+          </div>
+          <div className="mt-2 text-white flex items-center space-x-2">
+            <div className="text-sm">Transaction Deadline</div>
+          </div>
+          <div className="flex items-center space-x-2 mt-2">
+            <input
+              className="outline-none border-none max-w-min w-[4rem] max-h-min py-[.4rem] px-3 bg-white/10 shadow-md text-white rounded-xl text-base"
+              type="text"
+              id=""
+            />
+            <div className="text-white">min</div>
+          </div>
+          <div className="flex justify-between mt-4 text-white">
+            <div className="text-sm">Expert Mode</div>
+            <Switch />
+          </div>
         </div>
       </div>
     </div>
@@ -101,7 +221,7 @@ function Receiver() {
 
 function TradeSetting() {
   return (
-    <button className="bg-lightGray/50 p-3 rounded-xl scale-75 grid justify-items-center">
+    <div className="hover:bg-supernova/10 bg-lightGray/50 p-3 rounded-xl scale-75 grid justify-items-center">
       <Image
         src="/assets/icons/settings.png"
         height={33}
@@ -109,13 +229,13 @@ function TradeSetting() {
         className=" object-contain"
         alt="Trade Settings"
       />
-    </button>
+    </div>
   );
 }
 
 function InviteYourFriends() {
   return (
-    <button className="bg-lightGray/50 p-3 rounded-xl scale-75 grid justify-items-center">
+    <button className="hover:bg-supernova/10 bg-lightGray/50 p-3 rounded-xl scale-75 grid justify-items-center">
       <Image
         src="/assets/icons/share-icon.png"
         height={33}
@@ -129,7 +249,7 @@ function InviteYourFriends() {
 
 function PriceQuoteAutoRefreshes() {
   return (
-    <button className="bg-lightGray/50 p-3 rounded-xl scale-75 grid justify-items-center">
+    <button className="hover:bg-supernova/10 bg-lightGray/50 p-3 rounded-xl scale-75 grid justify-items-center">
       <Image
         src="/assets/icons/price refrsh.png"
         className=" object-contain"

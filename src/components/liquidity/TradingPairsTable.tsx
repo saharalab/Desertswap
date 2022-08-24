@@ -12,7 +12,7 @@ import { IoMdAdd } from "react-icons/io";
 import { RiExternalLinkFill } from "react-icons/ri";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import { Disclosure } from "@headlessui/react";
-import { MiningIcon } from "@/utils";
+import { MiningIcon } from "@/components/common";
 
 export function TradingPairsTable() {
   return (

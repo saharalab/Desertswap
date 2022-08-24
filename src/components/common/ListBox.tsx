@@ -8,7 +8,7 @@ export function ListBox({ listBoxFilter, ListBoxButton, ListBoxOptions }: any) {
   return (
     <div className="">
       <HeadlessListBox value={selected} onChange={setSelected}>
-        <div className="relative mt-1 flex justify-end space-y-10">
+        <div className="z-50 relative mt-1 flex justify-end space-y-10">
           <HeadlessListBox.Button>
             <ListBoxButton {...{ selected }} />
           </HeadlessListBox.Button>
