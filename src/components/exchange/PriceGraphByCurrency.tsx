@@ -3,8 +3,9 @@ import { PlotGraph } from "@/components/common";
 import SafeHydration from "@/components/common/SafeHydration";
 import { ToolTipProvider } from "./Context";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { FakeDataGeneratorReturnsType } from "@/faker-data/PlotGraph";
 
-export function PriceGraphByCurrency() {
+export function PriceGraphByCurrency({ graphData }: { graphData: FakeDataGeneratorReturnsType }) {
   const [viewChartBy, setViewChartBy] = useState<
     "monthly" | "weekly" | "hourly"
   >("hourly");
@@ -37,6 +38,7 @@ export function PriceGraphByCurrency() {
                 coinPrice,
                 setCoinPrice,
                 graphColor,
+                graphData,
               }}
             />
           </SafeHydration>

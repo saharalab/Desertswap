@@ -9,10 +9,10 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
+        <link rel="shortcut icon" href="/assets/icons/Desertswap Logo.png" />
         <Fonts />
         {/* <script src="../path/to/flowbite/dist/flowbite.js"></script> */}
-        <link rel="icon" href="/assets/icons/favicon.ico" />
+        <link rel="icon" href="/assets/icons/Desertswap Logo.png" />
       </Head>
       <body className={styles.body}>
           <Main />

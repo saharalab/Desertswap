@@ -1,10 +1,12 @@
 import { faker } from "@faker-js/faker";
 
-export function fakeDataGenerator(): {
+export type FakeDataGeneratorReturnsType ={
   hourly: { time: string; BUSD: string }[];
   weekly: { time: string; BUSD: string }[];
   monthly: { time: string; BUSD: string }[];
-} {
+}
+
+export function fakeDataGenerator(): FakeDataGeneratorReturnsType {
   function randomDate(start: any, end: any) {
     return new Date(
       start.getTime() + Math.random() * (end.getTime() - start.getTime())

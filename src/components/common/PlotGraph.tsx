@@ -11,6 +11,7 @@ import { ToolTipContext } from "@/components/exchange/Context";
 import { useWindowSize } from "@/custom-hooks";
 import { faker } from "@faker-js/faker";
 import { number } from "zod";
+import { FakeDataGeneratorReturnsType } from "@/faker-data/PlotGraph";
 
 const CustomToolTip = ({
   active,
@@ -59,12 +60,14 @@ export function PlotGraph({
   coinPrice,
   setCoinPrice,
   graphColor,
+  graphData,
 }: {
   viewChartBy: "monthly" | "weekly" | "hourly";
   setViewChartBy: Dispatch<SetStateAction<"monthly" | "weekly" | "hourly">>;
   coinPrice: number;
   setCoinPrice: Dispatch<SetStateAction<number>>;
   graphColor: string;
+  graphData: FakeDataGeneratorReturnsType
 }) {
   const [xAxisDataKey, setXAxisDataKey] = useState<string[]>([
     "2:20 PM",
@@ -102,7 +105,7 @@ export function PlotGraph({
           width={800}
           height={300}
           id="Area-chart"
-          data={data[viewChartBy]}
+          data={graphData[viewChartBy]}
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
         >
           <defs>
@@ -133,55 +136,3 @@ export function PlotGraph({
     </div>
   );
 }
-
-function fakeDataGenerator() {
-  function randomDate(start: any, end: any) {
-    return new Date(
-      start.getTime() + Math.random() * (end.getTime() - start.getTime())
-    );
-  }
-
-  function generateData(): { time: string; BUSD: string } {
-    return {
-      time: `${randomDate(
-        new Date(2012, 0, 1),
-        new Date()
-      ).getHours()}:${randomDate(
-        new Date(2012, 0, 1),
-        new Date()
-      ).getMinutes()} ${Math.random() >= 0.5 ? "AM" : "PM"} ${faker.date.month({
-        abbr: true,
-      })} ${randomDate(
-        new Date(2012, 0, 1),
-        new Date()
-      ).getDay()} GMT${randomDate(
-        new Date(2012, 0, 1),
-        new Date()
-      ).getTimezoneOffset()}`,
-      BUSD: parseFloat(`${Math.random() * 100}`).toFixed(2),
-    };
-  }
-
-  // Hourly Dump Data
-  let hourly: { time: string; BUSD: string }[] = Array(20)
-    .fill(1)
-    .map((item: any, idx: number) => generateData());
-
-  // Weekly Dump Data
-  let weekly: { time: string; BUSD: string }[] = Array(20)
-    .fill(1)
-    .map((item: any, idx: number) => generateData());
-
-  // Monthly Dump Data
-  let monthly: { time: string; BUSD: string }[] = Array(20)
-    .fill(1)
-    .map((item: any, idx: number) => generateData());
-
-  return { hourly, weekly, monthly };
-}
-
-const data: {
-  hourly: { time: string; BUSD: string }[];
-  weekly: { time: string; BUSD: string }[];
-  monthly: { time: string; BUSD: string }[];
-} = fakeDataGenerator();
