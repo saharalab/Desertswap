@@ -1,2 +1,0 @@
-# Desertswap
-DesertSwap UI

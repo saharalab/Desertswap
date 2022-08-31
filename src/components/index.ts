@@ -1,7 +1,0 @@
-export * from "./exchange/index"
-export * from "./liquidity/index"
-export * from "./mining/index"
-export * from "./erc20/index"
-export * from "./cp/index"
-export * from "./navbar/index"
-export * from "./web3/index"
