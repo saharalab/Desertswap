@@ -20,8 +20,8 @@ export const Logo = () => {
           <Image
             src="/assets/icons/Desertswap Logo.png"
             className=" object-contain select-none rounded-full"
-            height={50}
-            width={50}
+            height={38}
+            width={38}
             alt="DesertSwap"
           />
         </span>

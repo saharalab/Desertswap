@@ -52,23 +52,23 @@ function CurrencyInfo() {
       <div className="min-w-min">
         <Image
           className="object-contain min-w-max bg-black rounded-full"
-          src="/assets/icons/dswap_account.png"
+          src="/assets/icons/sahara_labs_logo-transparent.png"
           height={20}
           width={20}
-          alt="Binance Logo"
+          alt="SaharaLabs Logo"
         />
         <Image
           className="object-contain bg-black rounded-full min-w-max"
-          src="/assets/icons/dswap_account.png"
+          src="/assets/icons/binance-logo.png"
           height={20}
           width={20}
           alt="Binance Logo"
         />
       </div>
       <div className="text-white md:text-black font-black text-base md:text-lg">
-        SATO{" "}
+        SLT{" "}
         <span className="text-lightEarlyDawn/80 md:text-lightGray">
-          <span className="font-sans font-normal">/ </span> BSD
+          <span className="font-sans font-normal">/ </span> BUSD
         </span>
       </div>
     </div>
